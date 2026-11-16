@@ -1,7 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
+const isBranding = process.env.NEXT_PUBLIC_SITE_VARIANT === "branding";
+
+export const metadata: Metadata = isBranding ? {
+  metadataBase: new URL("https://pro.neraclinic.com"),
+  title: "Nera Clinic İstanbul & Bakırköy | Saç, Cilt ve Medikal Estetik",
+  description:
+    "Nera Clinic Florya, Bakırköy'de saç sağlığı, medikal estetik ve cilt bakım uygulamalarını kişisel değerlendirmeyle ele alan klinik yaklaşım.",
+  robots: { index: false, follow: false },
+  openGraph: {
+    title: "Nera Clinic İstanbul · Florya / Bakırköy",
+    description: "Saç, cilt ve medikal estetik uygulamalarında kişisel değerlendirme odaklı klinik yaklaşım.",
+    locale: "tr_TR",
+    type: "website",
+  },
+} : {
   metadataBase: new URL("https://pro.neraclinic.com"),
   title: "Lazer Epilasyon Florya | Nera Clinic",
   description:

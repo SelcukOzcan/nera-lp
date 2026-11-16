@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "build:v2:lazer": "NEXT_PUBLIC_BASE_PATH=/v2/lazer next build",
+    "dev:branding": "NEXT_PUBLIC_SITE_VARIANT=branding next dev",
+    "build:v2:branding": "NEXT_PUBLIC_SITE_VARIANT=branding NEXT_PUBLIC_BASE_PATH=/v2/branding next build",
     "start": "next start",
     "lint": "eslint ."
   },

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroSlider from "./HeroSlider";
 import LeadExperience from "./LeadExperience";
+import BrandingPage from "./BrandingPage";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -26,7 +27,7 @@ const faqs = [
 
 const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
 
-export default function Home() {
+function LaserPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
@@ -219,4 +220,8 @@ export default function Home() {
       <LeadExperience />
     </>
   );
+}
+
+export default function Home() {
+  return process.env.NEXT_PUBLIC_SITE_VARIANT === "branding" ? <BrandingPage /> : <LaserPage />;
 }
