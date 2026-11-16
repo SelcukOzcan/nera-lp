@@ -68,6 +68,7 @@ export default function Home() {
       <main>
         <HeroSlider />
 
+        <div className="content-shell">
         <section className="decision-rail" aria-label="Nera Clinic lazer epilasyon yaklaşımı">
           <article><span>01</span><div><strong>Kişisel ön değerlendirme</strong><p>Cilt tonu, kıl yapısı ve bölge birlikte ele alınır.</p></div></article>
           <article><span>02</span><div><strong>Üç teknoloji seçeneği</strong><p>Candela, Soprano ve Q-Switched seçenekleri.</p></div></article>
@@ -131,7 +132,7 @@ export default function Home() {
           <div className="process-heading"><p className="eyebrow"><span /> Dört net adım</p><h2>Karardan uygulamaya,<br /><em>şeffaf bir süreç.</em></h2></div>
           <div className="process-path">
             {processes.map(([number, title, text]) => (
-              <article key={number}><span>{number}</span><i aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>
+              <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></article>
             ))}
           </div>
         </section>
@@ -188,6 +189,7 @@ export default function Home() {
             ))}
           </div>
         </section>
+        </div>
       </main>
 
       <footer className="site-footer">
