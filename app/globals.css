@@ -886,9 +886,16 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 .brand-section-heading { display: grid; grid-template-columns: 1.35fr .65fr; gap: 8vw; align-items: end; margin-bottom: 50px; }
 .brand-section-heading h2 { margin: 0; color: var(--wine-dark); font-size: clamp(48px, 5vw, 76px); line-height: .98; }
 .brand-section-heading > p { max-width: 520px; margin: 0 0 5px; color: var(--muted); font-size: 13px; line-height: 1.8; }
-.brand-service-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
-.brand-service-grid article { position: relative; min-height: 430px; grid-column: span 2; display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; padding: 28px; color: #fff; background: var(--wine); border-radius: 28px; }
-.brand-service-grid article.is-wide { min-height: 500px; grid-column: span 3; }
+.brand-service-carousel { min-width: 0; }
+.brand-service-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.brand-service-toolbar > span { color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.brand-service-toolbar > span strong { color: var(--wine); font-size: 13px; }
+.brand-service-toolbar > div { display: flex; gap: 7px; }
+.brand-service-toolbar button { width: 42px; height: 42px; padding: 0; color: var(--wine); background: #fff; border: 1px solid rgba(102,49,48,.18); border-radius: 50%; box-shadow: 0 8px 24px rgba(67,35,34,.07); transition: color .2s ease, background .2s ease, transform .2s ease; }
+.brand-service-toolbar button:hover { color: #fff; background: var(--wine); transform: translateY(-2px); }
+.brand-service-grid { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(300px, 27vw, 430px); gap: 12px; overflow-x: auto; overscroll-behavior-inline: contain; padding: 0 1px 8px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.brand-service-grid::-webkit-scrollbar { display: none; }
+.brand-service-grid article { position: relative; min-height: 430px; display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; padding: 28px; color: #fff; background: var(--wine); border-radius: 28px; scroll-snap-align: start; }
 .brand-service-grid img { z-index: -2; object-fit: cover; transition: transform .65s cubic-bezier(.2,.8,.2,1); }
 .brand-service-grid article:first-child img { filter: saturate(.72) brightness(.82); }
 .brand-service-grid article:nth-child(2) img { filter: saturate(.72) brightness(.82); }
@@ -936,14 +943,16 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 .brand-conversion { display: grid; grid-template-columns: 1fr .9fr; gap: 8vw; align-items: center; padding: clamp(70px, 8vw, 120px) clamp(24px, 6vw, 96px); background: linear-gradient(135deg, #6c3534, #351d1d) !important; }
 .brand-conversion-copy h2 { margin: 0; color: #fff8f3; font-size: clamp(48px, 5vw, 76px); line-height: .98; }
 .brand-conversion-copy > p:not(.eyebrow) { max-width: 600px; margin: 28px 0 30px; color: #d6c0b7; font-size: 13px; line-height: 1.8; }
-.brand-contact-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 28px; }
-.brand-contact-actions a { position: relative; min-height: 92px; display: grid; align-content: center; padding: 15px 34px 15px 16px; color: #fff; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: 16px; transition: background .2s ease, transform .2s ease; }
-.brand-contact-actions a:hover { background: rgba(255,255,255,.13); transform: translateY(-3px); }
-.brand-contact-actions a.is-whatsapp { background: rgba(39,134,88,.18); border-color: rgba(90,194,137,.38); }
-.brand-contact-actions a.is-whatsapp:hover { background: rgba(39,134,88,.3); }
-.brand-contact-actions a > span { position: absolute; top: 12px; right: 14px; font-size: 16px; }
-.brand-contact-actions small { color: #d9aaa0; font-size: 7px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.brand-contact-actions strong { margin-top: 3px; color: #fff; font-size: 10px; font-weight: 700; line-height: 1.3; }
+.brand-contact-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 28px; }
+.brand-contact-actions a { position: relative; min-height: 78px; display: grid; align-content: center; padding: 14px 52px 14px 20px; color: var(--wine-dark); background: #fff8f3; border: 1px solid rgba(255,255,255,.38); border-radius: 999px; box-shadow: 0 12px 30px rgba(28,13,13,.15); transition: box-shadow .2s ease, transform .2s ease; }
+.brand-contact-actions a:hover { box-shadow: 0 17px 36px rgba(28,13,13,.25); transform: translateY(-3px); }
+.brand-contact-actions a.is-whatsapp { color: #fff; background: #267a50; border-color: rgba(136,224,176,.56); }
+.brand-contact-actions a.is-whatsapp:hover { background: #1f6843; }
+.brand-contact-actions a > span { position: absolute; top: 50%; right: 12px; width: 36px; height: 36px; display: grid; place-items: center; color: #fff; background: var(--wine); border-radius: 50%; font-size: 16px; transform: translateY(-50%); }
+.brand-contact-actions a.is-whatsapp > span { color: #1f6843; background: #e9fff3; }
+.brand-contact-actions small { color: #a86b5f; font-size: 7px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.brand-contact-actions a.is-whatsapp small { color: #bfead2; }
+.brand-contact-actions strong { margin-top: 3px; color: currentColor; font-size: 10px; font-weight: 800; line-height: 1.3; }
 .brand-page .brand-conversion .lead-form { background: #fff9f4; }
 
 .brand-faq { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw; }
@@ -974,7 +983,8 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .brand-story-video { min-height: 540px; }
   .brand-story-copy { padding: 60px 42px; }
   .brand-section-heading { grid-template-columns: 1fr; gap: 24px; }
-  .brand-service-grid article, .brand-service-grid article.is-wide { min-height: 420px; grid-column: span 3; }
+  .brand-service-grid { grid-auto-columns: minmax(300px, 46vw); }
+  .brand-service-grid article { min-height: 420px; }
   .brand-doctor-grid article { grid-template-rows: 420px auto; }
   .brand-process { grid-template-columns: 1fr; gap: 52px; }
   .brand-clinic { grid-template-columns: 1fr; }
@@ -1011,8 +1021,9 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .brand-story-copy h2, .brand-section-heading h2, .brand-process h2, .brand-clinic-copy h2, .brand-conversion-copy h2, .brand-faq h2 { font-size: clamp(40px, 11.7vw, 52px); }
   .brand-services, .brand-doctors, .brand-faq { padding: 68px 10px; }
   .brand-section-heading { padding: 0 8px; margin-bottom: 34px; }
-  .brand-service-grid { grid-template-columns: 1fr; }
-  .brand-service-grid article, .brand-service-grid article.is-wide { min-height: 390px; grid-column: auto; padding: 22px; border-radius: 22px; }
+  .brand-service-toolbar { padding: 0 8px; }
+  .brand-service-grid { grid-auto-columns: 84vw; padding-right: 8px; padding-left: 8px; }
+  .brand-service-grid article { min-height: 390px; padding: 22px; border-radius: 22px; }
   .brand-doctor-grid { grid-template-columns: 1fr; gap: 10px; }
   .brand-doctor-grid article { grid-template-rows: 330px auto; border-radius: 22px; }
   .brand-doctor-copy { padding: 28px 22px 32px; }
@@ -1027,7 +1038,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .brand-clinic-gallery > div:last-child { border-radius: 20px 56px 20px 20px; }
   .brand-conversion { padding: 68px 18px; }
   .brand-contact-actions { grid-template-columns: 1fr; }
-  .brand-contact-actions a { min-height: 72px; }
+  .brand-contact-actions a { min-height: 68px; }
   .brand-faq { padding-right: 18px; padding-left: 18px; }
 }
 
@@ -1047,8 +1058,8 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .brand-services, .brand-doctors, .brand-faq { padding-top: clamp(42px, 5vh, 60px); padding-bottom: clamp(42px, 5vh, 60px); }
   .brand-section-heading { margin-bottom: 26px; }
   .brand-section-heading h2 { font-size: clamp(43px, 4.2vw, 62px); }
-  .brand-service-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .brand-service-grid article, .brand-service-grid article.is-wide { min-height: 0; height: min(390px, 46vh); grid-column: auto; padding: 22px; }
+  .brand-service-grid { grid-auto-columns: clamp(300px, 26vw, 410px); }
+  .brand-service-grid article { min-height: 0; height: min(360px, 43vh); padding: 22px; }
   .brand-service-grid h3 { font-size: clamp(25px, 2.1vw, 34px); }
   .brand-service-grid p { font-size: 9px; }
   .brand-doctor-grid article { min-height: 0; height: min(490px, 58vh); }

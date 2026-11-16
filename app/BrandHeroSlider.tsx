@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const slides = [
-  { image: "dr-mehmet-dogruer.webp", alt: "Dr. Mehmet Doğruer Nera Clinic", eyebrow: "Saç sağlığı", title: "Kişiye göre planlanan yaklaşım", position: "40% 45%" },
   { image: "dr-nuran-erdagi.jpg", alt: "Dr. Nuran Erdağı Nera Clinic", eyebrow: "Medikal estetik", title: "Doğal görünümü merkeze alan bakış", position: "66% 48%" },
+  { image: "dr-mehmet-dogruer.webp", alt: "Dr. Mehmet Doğruer Nera Clinic", eyebrow: "Saç sağlığı", title: "Kişiye göre planlanan yaklaşım", position: "40% 45%" },
   { image: "scarlet-x.jpg", alt: "Nera Clinic Scarlet X uygulaması", eyebrow: "Cilt uygulamaları", title: "İhtiyaca göre seçilen teknoloji", position: "center" },
 ];
 

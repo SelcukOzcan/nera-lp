@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BrandingExperience from "./BrandingExperience";
 import BrandHeroSlider from "./BrandHeroSlider";
+import BrandServicesCarousel from "./BrandServicesCarousel";
 import SiteHeader from "./SiteHeader";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -39,6 +40,20 @@ const services = [
     title: "Cilt Bakım Uygulamaları",
     text: "Cilt tipine ve güncel ihtiyaca göre şekillenen profesyonel bakım seçenekleri.",
     image: "cilt-bakimi.jpg",
+    position: "center",
+  },
+  {
+    number: "06",
+    title: "Mezoterapi",
+    text: "Cildin güncel ihtiyacına göre değerlendirilen vitamin, mineral ve aminoasit içerikli uygulamalar.",
+    image: "mezoterapi.jpg",
+    position: "center",
+  },
+  {
+    number: "07",
+    title: "Anti-Aging Uygulamaları",
+    text: "Cilt kalitesi, mimik yapısı ve doğal ifadeyi birlikte ele alan kişisel yaşlanma karşıtı yaklaşımlar.",
+    image: "anti-aging.jpg",
     position: "center",
   },
 ];
@@ -101,7 +116,7 @@ export default function BrandingPage() {
         <div className="brand-content-shell">
           <section className="brand-story brand-section reveal-section" id="nera">
             <div className="brand-story-video">
-              <Image src={`${basePath}/images/clinic-1.png`} alt="Nera Clinic Florya klinik ortamı" fill sizes="(max-width: 960px) 100vw, 55vw" />
+              <Image src={`${basePath}/images/clinic-reception-hq.jpg`} alt="Nera Clinic Florya klinik ortamı" fill sizes="(max-width: 960px) 100vw, 55vw" quality={92} />
               <span className="brand-story-location">Florya · İstanbul</span>
             </div>
             <div className="brand-story-copy">
@@ -118,16 +133,7 @@ export default function BrandingPage() {
               <div><p className="eyebrow"><span /> Jenerik hizmetler</p><h2>İhtiyacınız ne olursa olsun,<br /><em>başlangıç noktamız sizsiniz.</em></h2></div>
               <p>Hizmetlerimizi tek bir katalog gibi değil; ihtiyacınız doğrultusunda değerlendirilecek seçenekler olarak ele alıyoruz.</p>
             </div>
-            <div className="brand-service-grid reveal-section">
-              {services.map((service, index) => (
-                <article className={index < 2 ? "is-wide" : ""} key={service.title}>
-                  <Image src={`${basePath}/images/branding/${service.image}`} alt={`${service.title} yaklaşımı`} fill sizes={index < 2 ? "(max-width: 800px) 100vw, 50vw" : "(max-width: 800px) 100vw, 33vw"} style={{ objectPosition: service.position }} />
-                  <div className="brand-service-overlay" />
-                  <span>{service.number}</span>
-                  <div><h3>{service.title}</h3><p>{service.text}</p><a href="#contact" aria-label={`${service.title} için görüşme planlayın`}>Ön değerlendirme <Arrow /></a></div>
-                </article>
-              ))}
-            </div>
+            <BrandServicesCarousel services={services} />
           </section>
 
           <section className="brand-doctors brand-section" id="hekimler">
