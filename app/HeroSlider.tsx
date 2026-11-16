@@ -3,14 +3,17 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const slides = [
   {
     eyebrow: "Kişiye göre lazer epilasyon",
     title: "Cildinize uygun teknolojiyle",
     accent: "kişisel bir lazer planı.",
     text: "Cilt tonu, kıl yapısı ve uygulama bölgeniz birlikte değerlendirilir; size uygun seçenekler bu bütün üzerinden ele alınır.",
-    image: "/images/laser-slide-1.webp",
+    image: `${basePath}/images/laser-slide-1.webp`,
     alt: "Lazer epilasyon uygulaması ve Candela teknolojisi",
+    facts: ["Kişisel plan", "Üç teknoloji", "Florya · İstanbul"],
     secondary: "Süreci inceleyin",
     secondaryHref: "#yaklasim",
   },
@@ -19,8 +22,9 @@ const slides = [
     title: "Tek bir teknoloji",
     accent: "her cilde uymaz.",
     text: "Candela, Soprano ve Q-Switched seçenekleri; cilt, kıl ve bölge özellikleri doğrultusunda değerlendirilir.",
-    image: "/images/laser-slide-2.webp",
+    image: `${basePath}/images/laser-slide-2.webp`,
     alt: "Kadınlar için lazer epilasyon yaklaşımı",
+    facts: ["Candela", "Soprano", "Q-Switched"],
     secondary: "Teknolojileri karşılaştırın",
     secondaryHref: "#teknolojiler",
   },
@@ -29,8 +33,9 @@ const slides = [
     title: "Farklı bölgeler için",
     accent: "ihtiyaca göre yaklaşım.",
     text: "Yüzden vücuda farklı bölgeler, aynı planla değil; kişisel değerlendirmeyle yapılandırılmış bir süreçle ele alınır.",
-    image: "/images/laser-slide-3.webp",
+    image: `${basePath}/images/laser-slide-3.webp`,
     alt: "Erkekler için lazer epilasyon yaklaşımı",
+    facts: ["Yüz & vücut", "Kadın & erkek", "Klinik değerlendirme"],
     secondary: "Neden Nera?",
     secondaryHref: "#neden-nera",
   },
@@ -88,7 +93,7 @@ export default function HeroSlider() {
 
           <div className={`slide-visual slide-visual-${index + 1}`}>
             <div className="slide-visual-glow" />
-            <Image src={slide.image} alt={slide.alt} fill priority={index === 0} sizes="(max-width: 960px) 100vw, 58vw" />
+            <Image src={slide.image} alt={slide.alt} fill preload={index === 0} sizes="(max-width: 960px) 100vw, 58vw" />
             <div className="slide-index"><small>Nera Clinic · Florya</small><strong>0{index + 1}</strong></div>
 
             <div className="slider-controls" aria-label="Slider kontrolleri">
@@ -109,6 +114,9 @@ export default function HeroSlider() {
             <div className="hero-actions">
               <a className="button button-primary" href="#contact">Ücretsiz Ön Değerlendirme <span className="arrow" aria-hidden="true">↗</span></a>
               <a className="text-link" href={slide.secondaryHref}>{slide.secondary} <span aria-hidden="true">↓</span></a>
+            </div>
+            <div className="hero-facts" aria-label="Nera Clinic lazer yaklaşımı">
+              {slide.facts.map((fact) => <span key={fact}>{fact}</span>)}
             </div>
             <p className="hero-note">Uygunluk ve sonuçlar kişiden kişiye değişebilir.</p>
           </div>

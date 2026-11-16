@@ -1,5 +1,8 @@
 import Image from "next/image";
 import HeroSlider from "./HeroSlider";
+import LeadExperience from "./LeadExperience";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const evaluationItems = [
   { number: "01", title: "Cilt tonu", text: "Uygulama yaklaşımı ve enerji seviyesi, cildin güncel görünümüyle birlikte ele alınır." },
@@ -23,20 +26,12 @@ const faqs = [
 
 const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
 
-function WhatsAppIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 3a8.5 8.5 0 0 0-7.3 12.85L3.5 20.5l4.77-1.2A8.5 8.5 0 1 0 12 3Zm0 1.7a6.8 6.8 0 0 1 0 13.6 6.72 6.72 0 0 1-3.36-.9l-.3-.17-2.54.64.66-2.47-.2-.32A6.8 6.8 0 0 1 12 4.7Zm-2.1 3.5c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.98 2.63 1.12 2.81c.13.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.57.65.2 1.24.17 1.7.1.52-.08 1.6-.65 1.82-1.29.23-.63.23-1.17.16-1.28-.07-.12-.25-.18-.52-.32-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34a8.13 8.13 0 0 1-1.5-1.86c-.15-.27-.02-.42.12-.55.12-.12.27-.32.4-.47.14-.16.18-.27.28-.45.09-.18.04-.34-.02-.47-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.62-.47h-.52Z" />
-    </svg>
-  );
-}
-
 export default function Home() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/lazer-epilasyon/",
+    url: `https://pro.neraclinic.com${basePath || "/lazer-epilasyon"}/`,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Şenlikköy, Florya Cd. No:47/1",
@@ -53,12 +48,15 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Nera Clinic ana sayfa">
-          <Image src="/images/nera-logo.webp" alt="Nera Clinic" width={220} height={48} priority />
+          <Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={220} height={48} preload />
         </a>
         <nav className="desktop-nav" aria-label="Ana menü">
           <a href="#yaklasim">Yaklaşım</a><a href="#teknolojiler">Teknolojiler</a><a href="#surec">Süreç</a><a href="#neden-nera">Neden Nera?</a><a href="#sss">SSS</a>
         </nav>
-        <a className="header-cta" href="#contact">Ücretsiz ön değerlendirme <Arrow /></a>
+        <div className="header-actions">
+          <a className="header-phone" href="tel:+905339220251"><small>Bilgi &amp; randevu</small><strong>0533 922 02 51</strong></a>
+          <a className="header-cta" href="#contact">Ücretsiz ön değerlendirme <Arrow /></a>
+        </div>
         <details className="mobile-menu">
           <summary aria-label="Menüyü aç"><span /><span /></summary>
           <nav aria-label="Mobil menü">
@@ -87,9 +85,9 @@ export default function Home() {
           </div>
 
           <div className="assessment-stage">
-            <div className="assessment-figure" aria-hidden="true">
-              <span className="figure-number">03</span><span className="figure-copy">veri<br />tek plan</span>
-              <i className="ring ring-one" /><i className="ring ring-two" /><i className="ring ring-three" />
+            <div className="assessment-image">
+              <Image src={`${basePath}/images/lazer-editorial.jpg`} alt="Lazer epilasyon öncesi klinik değerlendirme" fill sizes="(max-width: 700px) 100vw, 35vw" />
+              <div className="assessment-image-note"><small>Nera yaklaşımı</small><strong>Üç veri.<br />Tek kişisel plan.</strong></div>
             </div>
             <div className="assessment-rail">
               {evaluationItems.map((item) => (
@@ -110,19 +108,19 @@ export default function Home() {
           <div className="technology-stage reveal-section">
             <article className="device-panel device-panel-dark">
               <div className="device-meta"><span>01</span><small>Alexandrite teknolojisi</small></div>
-              <div className="device-visual"><div className="device-glow" /><Image src="/images/candela.webp" alt="Candela GentleLase Pro cihazı" fill sizes="(max-width: 860px) 90vw, 42vw" /></div>
+              <div className="device-visual"><div className="device-glow" /><Image src={`${basePath}/images/candela.webp`} alt="Candela GentleLase Pro cihazı" fill sizes="(max-width: 860px) 90vw, 42vw" /></div>
               <div className="device-copy"><h3>Candela<br />GentleLase Pro</h3><p>Açık ten ve koyu kıl yapısında değerlendirilebilen, geniş uygulama alanlarında kullanılan bir seçenektir.</p><a href="#contact">Size uygunluğunu değerlendirin <Arrow /></a></div>
             </article>
 
             <article className="device-panel device-panel-light">
               <div className="device-meta"><span>02</span><small>Diode teknolojisi</small></div>
-              <div className="device-visual"><div className="device-glow" /><Image src="/images/soprano.webp" alt="Soprano ICE Platinum cihazı" fill sizes="(max-width: 860px) 90vw, 42vw" /></div>
+              <div className="device-visual"><div className="device-glow" /><Image src={`${basePath}/images/soprano.webp`} alt="Soprano ICE Platinum cihazı" fill sizes="(max-width: 860px) 90vw, 42vw" /></div>
               <div className="device-copy"><h3>Soprano ICE<br />Platinum</h3><p>Soğutma destekli uygulama yaklaşımıyla farklı cilt ve kıl özelliklerinde değerlendirilebilen bir alternatiftir.</p><a href="#contact">Size uygunluğunu değerlendirin <Arrow /></a></div>
             </article>
 
             <article className="device-panel device-panel-neutral">
               <div className="device-meta"><span>03</span><small>ND:YAG teknolojisi</small></div>
-              <div className="device-visual"><div className="device-glow" /><Image src="/images/q-switched.webp" alt="Q-Switched ND:YAG lazer cihazı" fill sizes="(max-width: 860px) 90vw, 30vw" /></div>
+              <div className="device-visual"><div className="device-glow" /><Image src={`${basePath}/images/q-switched.webp`} alt="Q-Switched ND:YAG lazer cihazı" fill sizes="(max-width: 860px) 90vw, 30vw" /></div>
               <div className="device-copy"><h3>Q-Switched<br />ND:YAG</h3><p>Uygulama amacı ve bölgeye göre klinik değerlendirme kapsamında ele alınır. Lazer planındaki yeri, cilt ve kıl özellikleri doğrultusunda belirlenir.</p><a href="#contact">Size uygunluğunu değerlendirin <Arrow /></a></div>
             </article>
           </div>
@@ -140,7 +138,10 @@ export default function Home() {
 
         <section className="why section reveal-section" id="neden-nera">
           <div className="why-media">
-            <Image src="/images/clinic-1.png" alt="Nera Clinic Florya klinik karşılama alanı" fill sizes="(max-width: 860px) 100vw, 62vw" />
+            <video autoPlay muted loop playsInline preload="metadata" poster={`${basePath}/images/nera-clinic-poster.jpg`} aria-label="Nera Clinic Florya klinik tanıtım videosu">
+              <source src={`${basePath}/images/nera-clinic-tour.mp4`} type="video/mp4" />
+            </video>
+            <div className="why-media-note"><span>Modern klinik deneyimi</span><small>Florya · İstanbul</small></div>
             <div className="why-location"><span>✦</span> Florya · İstanbul</div>
           </div>
           <div className="why-panel">
@@ -152,7 +153,7 @@ export default function Home() {
               <li><span>02</span><div><strong>Teknoloji alternatifleri</strong><small>Tek bir cihaz yerine kişisel özelliklere göre seçenekler.</small></div></li>
               <li><span>03</span><div><strong>Açık süreç iletişimi</strong><small>Hazırlık, uygulama ve bakım adımlarında net bilgilendirme.</small></div></li>
             </ul>
-            <a className="button button-light" href="#contact">Nera ile tanışın <Arrow /></a>
+            <a className="button button-light why-button" href="#contact"><span>Nera ile tanışın</span><Arrow /></a>
           </div>
         </section>
 
@@ -189,21 +190,31 @@ export default function Home() {
         </section>
       </main>
 
-      <footer>
-        <div className="footer-main">
-          <div className="footer-brand"><Image src="/images/nera-logo.webp" alt="Nera Clinic" width={230} height={50} /><p>Teknolojiyle kişisel yaklaşımı bir araya getiren klinik deneyimi.</p></div>
-          <div className="footer-links"><span>Sayfayı keşfedin</span><a href="#yaklasim">Yaklaşım</a><a href="#teknolojiler">Teknolojiler</a><a href="#surec">Süreç</a><a href="#sss">SSS</a></div>
-          <div className="footer-cta"><span>İlk adım</span><a href="#contact">Ön değerlendirme talep edin <Arrow /></a></div>
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <section className="footer-conversion" aria-labelledby="footer-title">
+            <div>
+              <span className="footer-eyebrow">Nera Clinic · Lazer Epilasyon</span>
+              <h2 id="footer-title">Size uygun yaklaşım için <em>ilk adımı birlikte atalım.</em></h2>
+              <p>Cilt tonu, kıl yapısı ve uygulama bölgeniz birlikte değerlendirilsin; size uygun teknoloji seçeneklerini net bir plan içinde konuşalım.</p>
+            </div>
+            <div className="footer-buttons">
+              <a className="footer-button footer-button-primary" href="#contact"><span>Ücretsiz ön değerlendirme</span><Arrow /></a>
+              <a className="footer-button" href="https://wa.me/905441149094?text=Merhaba%2C%20Nera%20Clinic%20lazer%20epilasyon%20%C3%B6n%20de%C4%9Ferlendirmesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><span>WhatsApp ile görüşün</span><b aria-hidden="true">→</b></a>
+            </div>
+          </section>
+
+          <div className="footer-main">
+            <div className="footer-brand"><Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={230} height={50} /><p>Kişisel değerlendirme, teknoloji seçenekleri ve açık süreç iletişimini bir araya getiren klinik yaklaşım.</p></div>
+            <nav className="footer-links" aria-label="Lazer epilasyon sayfa bağlantıları"><span>Sayfa içeriği</span><a href="#yaklasim">Kişisel yaklaşım</a><a href="#teknolojiler">Teknolojiler</a><a href="#surec">Süreç</a><a href="#neden-nera">Neden Nera?</a><a href="#sss">Sık Sorulan Sorular</a><a href="#contact">Ön değerlendirme formu</a></nav>
+            <div className="footer-contact"><span>İletişim</span><a href="tel:+905339220251"><small>Bilgi &amp; randevu</small>0533 922 02 51</a><a href="mailto:info@neraclinic.com"><small>E-posta</small>info@neraclinic.com</a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><small>Florya · İstanbul</small>Şenlikköy, Florya Cd. No:47/1, Bakırköy</a></div>
+          </div>
+
+          <div className="footer-bottom"><p>Bu sayfadaki içerikler bilgilendirme amaçlıdır. Uygunluk ve uygulama planı kişiden kişiye değişebilir.</p><nav aria-label="Yasal bağlantılar"><a href="#">Gizlilik Politikası</a><span>© 2026 Nera Clinic</span></nav></div>
         </div>
-        <div className="footer-bottom"><span>© 2026 Nera Clinic</span><nav aria-label="Yasal bağlantılar"><a href="#">KVKK</a><a href="#">Gizlilik</a><a href="#">Çerezler</a></nav><span>Bu içerik genel bilgilendirme amaçlıdır.</span></div>
       </footer>
 
-      <div className="floating-actions" aria-label="Hızlı iletişim">
-        <a className="floating-form" href="#contact" aria-label="Ön değerlendirme formuna git"><span className="floating-icon">✦</span><b>Ücretsiz değerlendirme</b></a>
-        <a className="floating-whatsapp" href="#contact" aria-label="WhatsApp bilgisi için forma git"><span className="floating-icon"><WhatsAppIcon /></span><b>WhatsApp</b></a>
-      </div>
-
-      <a className="mobile-conversion-bar" href="#contact"><span><small>Ücretsiz</small>Ön değerlendirme</span><Arrow /></a>
+      <LeadExperience />
     </>
   );
 }
