@@ -1,5 +1,7 @@
 import Image from "next/image";
 import BrandingExperience from "./BrandingExperience";
+import BrandHeroSlider from "./BrandHeroSlider";
+import SiteHeader from "./SiteHeader";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -71,24 +73,7 @@ export default function BrandingPage() {
     <div className="brand-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <header className="site-header brand-header">
-        <a className="brand" href="#top" aria-label="Nera Clinic sayfa başı">
-          <Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={220} height={48} preload />
-        </a>
-        <nav className="desktop-nav" aria-label="Sayfa menüsü">
-          <a href="#nera">Nera</a><a href="#hizmetler">Hizmetler</a><a href="#hekimler">Hekimler</a><a href="#klinik">Klinik</a><a href="#sss">SSS</a>
-        </nav>
-        <div className="header-actions">
-          <a className="header-phone" href="tel:+905339220251"><small>Bilgi &amp; randevu</small><strong>0533 922 02 51</strong></a>
-          <a className="header-cta" href="#contact">Görüşme planlayın <Arrow /></a>
-        </div>
-        <details className="mobile-menu">
-          <summary aria-label="Menüyü aç"><span /><span /></summary>
-          <nav aria-label="Mobil menü">
-            <a href="#nera">Nera</a><a href="#hizmetler">Hizmetler</a><a href="#hekimler">Hekimler</a><a href="#klinik">Klinik</a><a href="#sss">SSS</a><a href="#contact">Görüşme planlayın</a>
-          </nav>
-        </details>
-      </header>
+      <SiteHeader variant="branding" />
 
       <main>
         <section className="brand-hero" id="top">
@@ -103,15 +88,7 @@ export default function BrandingPage() {
             <div className="brand-hero-notes"><span>İki hekim yaklaşımı</span><span>Florya&apos;da klinik deneyimi</span><span>Kişisel değerlendirme</span></div>
           </div>
 
-          <div className="brand-hero-visual" aria-label="Nera Clinic hekimleri ve klinik ortamı">
-            <Image className="brand-hero-clinic" src={`${basePath}/images/clinic-1.png`} alt="Nera Clinic Florya klinik ortamı" fill preload sizes="(max-width: 900px) 100vw, 52vw" />
-            <div className="brand-hero-shade" />
-            <div className="brand-doctor-strip">
-              <div><Image src={`${basePath}/images/branding/dr-nuran-erdagi.jpg`} alt="Dr. Nuran Erdağı" fill sizes="150px" /><span>Dr. Nuran Erdağı</span></div>
-              <div><Image src={`${basePath}/images/branding/dr-mehmet-dogruer.webp`} alt="Dr. Mehmet Doğruer" fill sizes="150px" /><span>Dr. Mehmet Doğruer</span></div>
-            </div>
-            <div className="brand-hero-marker"><small>Nera yaklaşımı</small><strong>Önce sizi<br />anlamak.</strong></div>
-          </div>
+          <BrandHeroSlider />
         </section>
 
         <div className="brand-trust-rail" aria-label="Nera Clinic öne çıkanlar">
@@ -124,9 +101,7 @@ export default function BrandingPage() {
         <div className="brand-content-shell">
           <section className="brand-story brand-section reveal-section" id="nera">
             <div className="brand-story-video">
-              <video autoPlay muted loop playsInline preload="metadata" poster={`${basePath}/images/nera-clinic-poster.jpg`} aria-label="Nera Clinic Florya tanıtım videosu">
-                <source src={`${basePath}/images/nera-clinic-tour.mp4`} type="video/mp4" />
-              </video>
+              <Image src={`${basePath}/images/clinic-1.png`} alt="Nera Clinic Florya klinik ortamı" fill sizes="(max-width: 960px) 100vw, 55vw" />
               <span className="brand-story-location">Florya · İstanbul</span>
             </div>
             <div className="brand-story-copy">
@@ -189,9 +164,16 @@ export default function BrandingPage() {
               <address>Şenlikköy, Florya Cd. No:47/1<br />34153 Bakırköy / İstanbul</address>
               <a className="button button-light" href="#contact">Randevu bilgisi alın <Arrow /></a>
             </div>
-            <div className="brand-clinic-gallery">
+            <div className="brand-clinic-gallery" aria-label="Nera Clinic iç mekan görselleri">
               <div><Image src={`${basePath}/images/clinic-interior.webp`} alt="Nera Clinic bekleme alanı" fill sizes="(max-width: 800px) 100vw, 35vw" /></div>
               <div><Image src={`${basePath}/images/clinic-4.webp`} alt="Nera Clinic iç mekan detayı" fill sizes="(max-width: 800px) 100vw, 28vw" /></div>
+            </div>
+          </section>
+
+          <section className="brand-faq brand-section" id="sss">
+            <div><p className="eyebrow"><span /> Merak edilenler</p><h2>İlk görüşme öncesi<br /><em>kısa yanıtlar.</em></h2></div>
+            <div className="faq-list">
+              {faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<i aria-hidden="true">+</i></summary><p>{answer}</p></details>)}
             </div>
           </section>
 
@@ -200,7 +182,11 @@ export default function BrandingPage() {
               <p className="eyebrow light"><span /> İlk adım</p>
               <h2>İhtiyacınızı dinleyelim,<br /><em>doğru görüşmeyi planlayalım.</em></h2>
               <p>Bilgilerinizi bırakın; ekibimiz ilgilendiğiniz uygulama ve randevu seçenekleri için size ulaşsın.</p>
-              <a href="tel:+905339220251"><small>Bilgi &amp; randevu</small><strong>0533 922 02 51</strong></a>
+              <div className="brand-contact-actions">
+                <a href="tel:+905339220251"><span aria-hidden="true">↗</span><small>Telefon</small><strong>Hemen arayın</strong></a>
+                <a className="is-whatsapp" href="https://wa.me/905441149094?text=Merhaba%2C%20Nera%20Clinic%20hizmetleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>WhatsApp</small><strong>Mesaj gönderin</strong></a>
+                <a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>Adres</small><strong>Yol tarifi alın</strong></a>
+              </div>
             </div>
             <form className="lead-form reveal-section" aria-describedby="brand-prototype-note">
               <div className="form-heading"><span>Görüşme talebi</span><strong>Size ulaşalım</strong></div>
@@ -215,13 +201,6 @@ export default function BrandingPage() {
               <button className="button button-submit" type="button">Görüşme Talebi Oluştur <Arrow /></button>
               <p id="brand-prototype-note">Prototip formudur; veri göndermez.</p>
             </form>
-          </section>
-
-          <section className="brand-faq brand-section" id="sss">
-            <div><p className="eyebrow"><span /> Merak edilenler</p><h2>İlk görüşme öncesi<br /><em>kısa yanıtlar.</em></h2></div>
-            <div className="faq-list">
-              {faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<i aria-hidden="true">+</i></summary><p>{answer}</p></details>)}
-            </div>
           </section>
         </div>
       </main>

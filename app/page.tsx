@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroSlider from "./HeroSlider";
 import LeadExperience from "./LeadExperience";
 import BrandingPage from "./BrandingPage";
+import SiteHeader from "./SiteHeader";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -47,24 +48,7 @@ function LaserPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Nera Clinic ana sayfa">
-          <Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={220} height={48} preload />
-        </a>
-        <nav className="desktop-nav" aria-label="Ana menü">
-          <a href="#yaklasim">Yaklaşım</a><a href="#teknolojiler">Teknolojiler</a><a href="#surec">Süreç</a><a href="#neden-nera">Neden Nera?</a><a href="#sss">SSS</a>
-        </nav>
-        <div className="header-actions">
-          <a className="header-phone" href="tel:+905339220251"><small>Bilgi &amp; randevu</small><strong>0533 922 02 51</strong></a>
-          <a className="header-cta" href="#contact">Ücretsiz ön değerlendirme <Arrow /></a>
-        </div>
-        <details className="mobile-menu">
-          <summary aria-label="Menüyü aç"><span /><span /></summary>
-          <nav aria-label="Mobil menü">
-            <a href="#yaklasim">Yaklaşım</a><a href="#teknolojiler">Teknolojiler</a><a href="#surec">Süreç</a><a href="#neden-nera">Neden Nera?</a><a href="#sss">SSS</a><a href="#contact">Ücretsiz ön değerlendirme</a>
-          </nav>
-        </details>
-      </header>
+      <SiteHeader variant="laser" />
 
       <main>
         <HeroSlider />
