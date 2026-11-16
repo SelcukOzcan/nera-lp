@@ -95,18 +95,6 @@ export default function HeroSlider() {
             <div className="slide-visual-glow" />
             <Image src={slide.image} alt={slide.alt} fill preload={index === 0} sizes="(max-width: 960px) 100vw, 58vw" />
             <div className="slide-index"><small>Nera Clinic · Florya</small><strong>0{index + 1}</strong></div>
-
-            <div className="slider-controls" aria-label="Slider kontrolleri">
-              <span className="slide-count">0{active + 1}<i />0{slides.length}</span>
-              <div className="slide-progress" aria-hidden="true"><span key={active} style={{ animationPlayState: paused ? "paused" : "running" }} /></div>
-              <div className="slide-dots">
-                {slides.map((item, dotIndex) => (
-                  <button type="button" className={dotIndex === active ? "is-active" : ""} onClick={() => setActive(dotIndex)} aria-label={`${dotIndex + 1}. slayta git`} aria-current={dotIndex === active ? "true" : undefined} key={item.title} />
-                ))}
-              </div>
-              <button className="slider-arrow" type="button" onClick={() => changeSlide(-1)} aria-label="Önceki slayt">←</button>
-              <button className="slider-arrow" type="button" onClick={() => changeSlide(1)} aria-label="Sonraki slayt">→</button>
-            </div>
           </div>
 
           <div className="slide-body">
@@ -122,6 +110,18 @@ export default function HeroSlider() {
           </div>
         </article>
       ))}
+
+      <div className="slider-controls" aria-label="Slider kontrolleri">
+        <span className="slide-count">0{active + 1}<i />0{slides.length}</span>
+        <div className="slide-progress" aria-hidden="true"><span key={active} style={{ animationPlayState: paused ? "paused" : "running" }} /></div>
+        <div className="slide-dots">
+          {slides.map((item, dotIndex) => (
+            <button type="button" className={dotIndex === active ? "is-active" : ""} onClick={() => setActive(dotIndex)} aria-label={`${dotIndex + 1}. slayta git`} aria-current={dotIndex === active ? "true" : undefined} key={item.title} />
+          ))}
+        </div>
+        <button className="slider-arrow" type="button" onClick={() => changeSlide(-1)} aria-label="Önceki slayt">←</button>
+        <button className="slider-arrow" type="button" onClick={() => changeSlide(1)} aria-label="Sonraki slayt">→</button>
+      </div>
     </section>
   );
 }
