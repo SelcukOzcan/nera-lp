@@ -269,18 +269,46 @@ a:hover .arrow, button:hover .arrow { transform: translate(3px, -3px); }
   position: relative;
   z-index: 8;
   display: grid;
-  grid-template-columns: repeat(4, 1fr) 1.15fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(260px, 1.15fr);
+  gap: 10px;
   margin: 0;
+  padding: 14px clamp(14px, 1.6vw, 24px);
   background: #fff;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.decision-rail article { min-height: 142px; display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; padding: 30px clamp(18px, 2.3vw, 36px); border-right: 1px solid var(--line); }
-.decision-rail article > span { color: var(--rose); font-family: var(--serif); font-size: 13px; font-style: italic; }
-.decision-rail strong { display: block; margin-bottom: 6px; color: var(--wine-dark); font-family: var(--serif); font-size: 18px; font-weight: 400; line-height: 1.2; }
-.decision-rail p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
-.decision-rail > a { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 7px; padding: 28px clamp(24px, 3vw, 46px); color: #fff; background: var(--wine); font-family: var(--serif); font-size: 21px; line-height: 1.18; transition: background 0.25s ease; }
-.decision-rail > a:hover { background: var(--wine-dark); }
+.decision-rail article {
+  min-height: 150px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 14px;
+  align-content: center;
+  align-items: start;
+  padding: 26px clamp(18px, 1.8vw, 28px);
+  background: #fffaf6;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(53, 29, 29, 0.035);
+}
+.decision-rail article > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--rose);
+  background: #fff;
+  border: 1px solid rgba(210, 82, 57, 0.2);
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.decision-rail article > div { min-width: 0; }
+.decision-rail strong { min-height: 42px; display: flex; align-items: flex-start; margin: 0 0 7px; color: var(--wine-dark); font-size: 13px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.35; }
+.decision-rail p { max-width: 28ch; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.decision-rail > a { position: relative; min-height: 150px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 7px; padding: 28px clamp(24px, 3vw, 46px); color: #fff; background: var(--wine); border-radius: 18px; font-family: var(--serif); font-size: 21px; line-height: 1.18; box-shadow: 0 16px 34px rgba(53, 29, 29, 0.12); transition: background 0.25s ease, transform 0.25s ease; }
+.decision-rail > a:hover { background: var(--wine-dark); transform: translateY(-2px); }
 .decision-rail > a small { font-family: var(--sans); font-size: 8px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7; }
 .decision-rail > a .arrow { position: absolute; right: 24px; bottom: 23px; }
 @keyframes slideProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
@@ -558,7 +586,9 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .desktop-nav a { font-size: 10px; }
   .hero-slide { grid-template-columns: minmax(380px, 0.86fr) minmax(480px, 1.14fr); }
   .slide-heading h1 { font-size: clamp(48px, 4.9vw, 62px); }
+  .decision-rail { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .decision-rail article { padding-right: 18px; padding-left: 18px; }
+  .decision-rail > a { grid-column: 1 / -1; min-height: 94px; }
   .technology-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .device-panel-neutral { grid-column: 1 / -1; min-height: 560px; grid-template-columns: 0.9fr 1.1fr; grid-template-rows: 1fr; }
   .device-panel-neutral .device-visual { min-height: 470px; }
@@ -591,7 +621,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .slide-body { grid-column: 1; grid-row: 3; padding: 28px 22px 30px; }
   .slide-body > p:first-child { max-width: 720px; }
   .decision-rail { grid-template-columns: repeat(2, 1fr); }
-  .decision-rail article { min-height: 122px; }
+  .decision-rail article { min-height: 138px; }
   .decision-rail > a { grid-column: 1 / -1; min-height: 94px; }
 
   .assessment { grid-template-columns: 1fr; gap: 44px; }
@@ -639,10 +669,10 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .hero-actions { align-items: stretch; flex-direction: column; gap: 12px; }
   .button-primary { width: 100%; min-width: 0; }
   .hero-note { margin-top: 18px; }
-  .decision-rail { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .decision-rail { display: flex; gap: 10px; overflow-x: auto; padding: 12px; scroll-padding-inline: 12px; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .decision-rail::-webkit-scrollbar { display: none; }
-  .decision-rail article, .decision-rail > a { flex: 0 0 78vw; min-height: 132px; scroll-snap-align: start; }
-  .decision-rail > a { position: relative; }
+  .decision-rail article, .decision-rail > a { flex: 0 0 min(84vw, 340px); min-height: 154px; scroll-snap-align: start; }
+  .decision-rail strong { min-height: auto; }
 
   .assessment-copy > p:not(.eyebrow) { margin-top: 24px; font-size: 14px; }
   .assessment-stage { min-height: 0; grid-template-columns: 1fr; border-radius: 28px; }
