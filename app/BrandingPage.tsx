@@ -44,7 +44,7 @@ const services = [
   },
   {
     number: "06",
-    title: "Mezoterapi",
+    title: "Mezoterapi Uygulamaları",
     text: "Cildin güncel ihtiyacına göre değerlendirilen vitamin, mineral ve aminoasit içerikli uygulamalar.",
     image: "mezoterapi.jpg",
     position: "center",
