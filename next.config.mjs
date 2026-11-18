@@ -5,6 +5,7 @@ const nextConfig = {
   output: "export",
   basePath,
   trailingSlash: true,
+  enablePrerenderSourceMaps: false,
   images: { unoptimized: true },
 };
 

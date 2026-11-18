@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroSlider from "./HeroSlider";
 import LeadExperience from "./LeadExperience";
 import BrandingPage from "./BrandingPage";
+import FaceLiftPage from "./FaceLiftPage";
 import SiteHeader from "./SiteHeader";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -207,5 +208,6 @@ function LaserPage() {
 }
 
 export default function Home() {
-  return process.env.NEXT_PUBLIC_SITE_VARIANT === "branding" ? <BrandingPage /> : <LaserPage />;
+  const variant = process.env.NEXT_PUBLIC_SITE_VARIANT;
+  return variant === "branding" ? <BrandingPage /> : variant === "face-lift" ? <FaceLiftPage /> : <LaserPage />;
 }

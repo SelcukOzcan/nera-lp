@@ -4,13 +4,15 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const slides = [
-  { image: "dr-nuran-erdagi.jpg", alt: "Dr. Nuran Erdağı Nera Clinic", eyebrow: "Medikal estetik", title: "Doğal görünümü merkeze alan bakış", position: "66% 48%" },
-  { image: "dr-mehmet-dogruer.webp", alt: "Dr. Mehmet Doğruer Nera Clinic", eyebrow: "Saç sağlığı", title: "Kişiye göre planlanan yaklaşım", position: "40% 45%" },
-  { image: "scarlet-x.jpg", alt: "Nera Clinic Scarlet X uygulaması", eyebrow: "Cilt uygulamaları", title: "İhtiyaca göre seçilen teknoloji", position: "center" },
+const defaultSlides = [
+  { image: "branding/dr-nuran-erdagi.jpg", alt: "Dr. Nuran Erdağı Nera Clinic", eyebrow: "Medikal estetik", title: "Doğal görünümü merkeze alan bakış", position: "66% 48%" },
+  { image: "branding/dr-mehmet-dogruer.webp", alt: "Dr. Mehmet Doğruer Nera Clinic", eyebrow: "Saç sağlığı", title: "Kişiye göre planlanan yaklaşım", position: "40% 45%" },
+  { image: "branding/scarlet-x.jpg", alt: "Nera Clinic Scarlet X uygulaması", eyebrow: "Cilt uygulamaları", title: "İhtiyaca göre seçilen teknoloji", position: "center" },
 ];
 
-export default function BrandHeroSlider() {
+export type BrandHeroSlide = (typeof defaultSlides)[number];
+
+export default function BrandHeroSlider({ slides = defaultSlides }: { slides?: BrandHeroSlide[] }) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const startX = useRef<number | null>(null);
@@ -19,13 +21,13 @@ export default function BrandHeroSlider() {
     if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setTimeout(() => setActive((value) => (value + 1) % slides.length), 5600);
     return () => window.clearTimeout(timer);
-  }, [active, paused]);
+  }, [active, paused, slides.length]);
 
   const step = (amount: number) => setActive((value) => (value + amount + slides.length) % slides.length);
 
   return <div className="brand-hero-visual brand-hero-slider" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onPointerDown={(event) => { startX.current = event.clientX; }} onPointerUp={(event) => { if (startX.current !== null && Math.abs(event.clientX - startX.current) > 45) step(event.clientX > startX.current ? -1 : 1); startX.current = null; }}>
     {slides.map((slide, index) => <div className={`brand-hero-slide ${index === active ? "is-active" : ""}`} aria-hidden={index !== active} key={slide.title}>
-      <Image src={`${basePath}/images/branding/${slide.image}`} alt={slide.alt} fill preload={index === 0} sizes="(max-width: 960px) 100vw, 52vw" style={{ objectPosition: slide.position }} />
+      <Image src={`${basePath}/images/${slide.image}`} alt={slide.alt} fill preload={index === 0} sizes="(max-width: 960px) 100vw, 52vw" style={{ objectPosition: slide.position }} />
       <div className="brand-hero-shade" />
       <div className="brand-hero-caption"><small>{slide.eyebrow}</small><strong>{slide.title}</strong></div>
     </div>)}

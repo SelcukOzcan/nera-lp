@@ -7,7 +7,9 @@
     "build": "next build",
     "build:v2:lazer": "NEXT_PUBLIC_BASE_PATH=/v2/lazer next build",
     "dev:branding": "NEXT_PUBLIC_SITE_VARIANT=branding next dev",
+    "dev:face-lift": "NEXT_PUBLIC_SITE_VARIANT=face-lift next dev",
     "build:v2:branding": "NEXT_PUBLIC_SITE_VARIANT=branding NEXT_PUBLIC_BASE_PATH=/v2/branding next build",
+    "build:v2:yuz-germe": "NEXT_PUBLIC_SITE_VARIANT=face-lift NEXT_PUBLIC_BASE_PATH=/v2/yuz-germe next build",
     "start": "next start",
     "lint": "eslint ."
   },
