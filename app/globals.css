@@ -821,6 +821,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 .brand-hero { min-height: calc(100svh - 108px); display: grid; grid-template-columns: minmax(0, .94fr) minmax(520px, 1.06fr); background: var(--paper); }
 .brand-hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(68px, 7vw, 116px) clamp(32px, 5.7vw, 96px); }
 .brand-hero-copy h1 { max-width: 780px; margin: 0; color: var(--wine-dark); font-size: clamp(62px, 6.2vw, 100px); line-height: .94; }
+.brand-hero-copy h1 > * { display: block; white-space: nowrap; }
 .brand-hero-copy > p:not(.eyebrow) { max-width: 690px; margin: 34px 0 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
 .brand-hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 38px; }
 .brand-hero-actions .button { min-width: 230px; }
@@ -998,7 +999,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .brand-header { grid-template-columns: 1fr auto; }
   .brand-hero { min-height: auto; grid-template-columns: 1fr; }
   .brand-hero-copy { min-height: 610px; padding: 78px 30px 58px; }
-  .brand-hero-copy h1 { max-width: 13ch; font-size: clamp(58px, 9.5vw, 82px); }
+  .brand-hero-copy h1 { max-width: none; font-size: clamp(54px, 8vw, 76px); }
   .brand-hero-visual { min-height: 680px; }
   .brand-trust-rail { grid-template-columns: repeat(2, 1fr); }
   .brand-trust-rail > *:nth-child(2) { border-right: 0; }
@@ -1024,7 +1025,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .brand-page .brand-content-shell { width: calc(100% - 16px); gap: 10px; margin-top: 8px; }
   .brand-page .brand-section { border-radius: 24px; }
   .brand-hero-copy { min-height: 500px; padding: 56px 18px 38px; }
-  .brand-hero-copy h1 { font-size: clamp(43px, 12.7vw, 58px); }
+  .brand-hero-copy h1 { font-size: clamp(36px, 10.5vw, 48px); }
   .brand-hero-copy > p:not(.eyebrow) { margin-top: 24px; font-size: 13px; line-height: 1.65; }
   .brand-hero-actions { align-items: stretch; flex-direction: column; gap: 16px; margin-top: 28px; }
   .brand-hero-actions .button { width: 100%; min-width: 0; }
@@ -1069,7 +1070,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 @media (min-width: 1181px) {
   .brand-hero { height: calc(100svh - 108px); min-height: 620px; max-height: 760px; overflow: hidden; }
   .brand-hero-copy { padding-top: 40px; padding-bottom: 40px; }
-  .brand-hero-copy h1 { font-size: clamp(56px, 5.2vw, 76px); }
+  .brand-hero-copy h1 { max-width: none; font-size: clamp(52px, 4.4vw, 68px); }
   .brand-hero-copy > p:not(.eyebrow) { margin-top: 20px; font-size: 13px; }
   .brand-hero-actions { margin-top: 24px; }
   .brand-hero-notes { margin-top: 22px; }

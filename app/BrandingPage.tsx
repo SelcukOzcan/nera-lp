@@ -93,7 +93,7 @@ export default function BrandingPage() {
         <section className="brand-hero" id="top">
           <div className="brand-hero-copy">
             <p className="eyebrow"><span /> Nera Clinic · Florya / Bakırköy</p>
-            <h1>Bilimsel yaklaşım,<br /><em>kişisel dokunuş,</em><br />doğal görünüm</h1>
+            <h1><span>Bilimsel yaklaşım,</span><em>kişisel dokunuş,</em><span>doğal görünüm</span></h1>
             <p>İstanbul&apos;da saç sağlığı, medikal estetik ve cilt uygulamalarını; ihtiyacınızı anlayan kişisel bir değerlendirmeyle ele alıyoruz.</p>
             <div className="brand-hero-actions">
               <a className="button button-primary" href="#contact">Görüşme planlayın <Arrow /></a>
