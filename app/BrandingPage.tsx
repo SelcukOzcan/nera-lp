@@ -93,7 +93,7 @@ export default function BrandingPage() {
         <section className="brand-hero" id="top">
           <div className="brand-hero-copy">
             <p className="eyebrow"><span /> Nera Clinic · Florya / Bakırköy</p>
-            <h1><span>Bilimsel yaklaşım,</span><span><em>kişisel dokunuş,</em> doğal görünüm</span></h1>
+            <h1><span>Bilimsel yaklaşım,</span><em>kişisel dokunuş,</em><span>doğal görünüm</span></h1>
             <p>İstanbul&apos;da saç sağlığı, medikal estetik ve cilt uygulamalarını; ihtiyacınızı anlayan kişisel bir değerlendirmeyle ele alıyoruz.</p>
             <div className="brand-hero-actions">
               <a className="button button-primary" href="#contact">Görüşme planlayın <Arrow /></a>
@@ -155,9 +155,9 @@ export default function BrandingPage() {
           <section className="brand-process brand-section reveal-section" aria-labelledby="brand-process-title">
             <div><p className="eyebrow"><span /> İlk görüşmeden kişisel plana</p><h2 id="brand-process-title">Açık, sade ve<br /><em>size göre bir süreç.</em></h2></div>
             <ol>
-              <li><span>01</span><div><h3>İhtiyacınızı dinleriz</h3><p>Beklentinizi, önceliğinizi ve merak ettiklerinizi konuşuruz.</p></div></li>
-              <li><span>02</span><div><h3>Hekim değerlendirir</h3><p>Uygunluk ve seçenekler kişisel değerlendirme ile netleşir.</p></div></li>
-              <li><span>03</span><div><h3>Planı birlikte kurarız</h3><p>Süreç, alternatifler ve sonraki adımlar açık biçimde paylaşılır.</p></div></li>
+              <li><span>01</span><div><h3>İhtiyacınıza Yönelik Kişiselleştirilmiş Plan</h3><p>İhtiyacınız, beklentiniz ve öncelikleriniz doğrultusunda size özel bir plan hazırlanır.</p></div></li>
+              <li><span>02</span><div><h3>Hekim Değerlendirmesi &amp; Uygulaması</h3><p>Uygunluk hekim tarafından değerlendirilir; planlanan uygulama doğrudan hekim tarafından gerçekleştirilir.</p></div></li>
+              <li><span>03</span><div><h3>Uygulama Sonrası Takip</h3><p>Uygulama sonrası bilgilendirme ve takip adımları açık biçimde paylaşılır.</p></div></li>
             </ol>
           </section>
 

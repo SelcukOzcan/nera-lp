@@ -88,7 +88,7 @@ h1 em, h2 em { color: var(--rose); font-style: normal; font-weight: inherit; }
   padding: 0 clamp(22px, 4vw, 70px);
   color: #eadbd4;
   background: var(--wine-dark);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: .04em;
 }
@@ -100,7 +100,7 @@ h1 em, h2 em { color: var(--rose); font-style: normal; font-weight: inherit; }
 .desktop-nav a {
   position: relative;
   color: #4e4442;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -643,7 +643,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .site-header { grid-template-columns: 180px 1fr auto; }
   .header-phone { display: none; }
   .desktop-nav { gap: 18px; }
-  .desktop-nav a { font-size: 10px; }
+  .desktop-nav a { font-size: 12px; }
   .hero-slide { grid-template-columns: minmax(400px, 0.9fr) minmax(460px, 1.1fr); }
   .slide-heading { min-height: 380px; }
   .slide-heading h1 { font-size: clamp(48px, 4.7vw, 60px); }
@@ -668,7 +668,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .mobile-menu summary::-webkit-details-marker { display: none; }
   .mobile-menu summary span { width: 17px; height: 1px; background: var(--wine); }
   .mobile-menu nav { position: absolute; top: 50px; right: 0; min-width: 242px; display: grid; padding: 13px; background: rgba(251, 248, 243, 0.98); border: 1px solid var(--line); border-radius: 17px; box-shadow: 0 20px 46px rgba(52, 31, 30, 0.15); backdrop-filter: blur(18px); }
-  .mobile-menu nav a { padding: 10px; font-size: 12px; font-weight: 700; }
+  .mobile-menu nav a { padding: 10px; font-size: 14px; font-weight: 700; }
   .mobile-menu nav a:last-child { margin-top: 6px; color: #fff; background: var(--wine); border-radius: 9px; }
   .section { padding: 88px 22px; }
   .content-shell { gap: 18px; }
@@ -1020,7 +1020,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 }
 
 @media (max-width: 700px) {
-  .site-topbar { justify-content: space-between; gap: 12px; font-size: 7px; }
+  .site-topbar { justify-content: space-between; gap: 12px; font-size: 9px; }
   .site-topbar a:first-child { max-width: 48vw; }
   .brand-page .brand-content-shell { width: calc(100% - 16px); gap: 10px; margin-top: 8px; }
   .brand-page .brand-section { border-radius: 24px; }
@@ -1069,9 +1069,9 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 }
 
 @media (min-width: 1181px) {
-  .brand-hero { height: calc(100svh - 108px); min-height: 620px; max-height: 760px; grid-template-columns: minmax(0, 1.15fr) minmax(480px, .85fr); overflow: hidden; }
+  .brand-hero { height: calc(100svh - 108px); min-height: 620px; max-height: 760px; overflow: hidden; }
   .brand-hero-copy { padding-top: 40px; padding-bottom: 40px; }
-  .brand-hero-copy h1 { max-width: none; font-size: clamp(42px, 3.35vw, 52px); }
+  .brand-hero-copy h1 { max-width: none; font-size: clamp(52px, 4.4vw, 68px); }
   .brand-hero-copy > p:not(.eyebrow) { margin-top: 20px; font-size: 13px; }
   .brand-hero-actions { margin-top: 24px; }
   .brand-hero-notes { margin-top: 22px; }
