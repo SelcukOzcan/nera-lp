@@ -134,7 +134,7 @@ h1 em, h2 em { color: var(--rose); font-style: normal; font-weight: inherit; }
 .header-actions { display: flex; align-items: center; gap: 18px; }
 .header-phone { display: grid; gap: 1px; text-align: right; line-height: 1.2; }
 .header-phone small { color: var(--muted); font-size: 7px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-.header-phone strong { color: var(--wine); font-size: 11px; font-weight: 700; }
+.header-phone strong { color: var(--wine); font-size: 13px; font-weight: 700; }
 .arrow { display: inline-block; transition: transform 0.25s ease; }
 a:hover .arrow, button:hover .arrow { transform: translate(3px, -3px); }
 .mobile-menu { display: none; }
