@@ -1137,8 +1137,8 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 .lift-map-visual { position: relative; min-height: 690px; overflow: hidden; border-radius: 30px 100px 30px 30px; }
 .lift-map-visual > img { object-fit: cover; object-position: 52% 40%; }
 .lift-map-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(39,18,18,.03), rgba(39,18,18,.43)); }
-.lift-hotspot { position: absolute; display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: #fff; background: rgba(54,26,25,.68); border: 1px solid rgba(255,255,255,.26); border-radius: 999px; font-size: 8px; font-weight: 700; letter-spacing: .04em; backdrop-filter: blur(10px); }
-.lift-hotspot i { width: 7px; height: 7px; background: #e9a18c; border: 2px solid rgba(255,255,255,.78); border-radius: 50%; box-shadow: 0 0 0 6px rgba(233,161,140,.15); }
+.lift-hotspot { position: absolute; display: flex; align-items: center; gap: 10px; padding: 10px 15px; color: #fff; background: rgba(54,26,25,.78); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; font-size: clamp(11px, .78vw, 13px); font-weight: 700; line-height: 1; letter-spacing: .04em; backdrop-filter: blur(10px); }
+.lift-hotspot i { width: 8px; height: 8px; background: #e9a18c; border: 2px solid rgba(255,255,255,.78); border-radius: 50%; box-shadow: 0 0 0 6px rgba(233,161,140,.15); }
 .lift-hotspot.is-one { top: 34%; right: 15%; }
 .lift-hotspot.is-two { top: 48%; left: 17%; }
 .lift-hotspot.is-three { top: 61%; right: 19%; }
@@ -1289,7 +1289,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .lift-map-visual, .lift-doctor-image, .lift-clinic-media { min-height: 430px; border-radius: 20px 58px 20px 20px; }
   .lift-map-copy, .lift-doctor-copy, .lift-clinic-copy { padding: 48px 18px 42px; }
   .lift-map-copy h2, .lift-heading h2, .lift-doctor-copy h2, .lift-process > div > h2, .lift-clinic-copy h2, .lift-faq h2, .lift-contact-copy h2 { font-size: clamp(39px, 11.5vw, 51px); }
-  .lift-hotspot { padding: 7px 9px; font-size: 7px; }
+  .lift-hotspot { gap: 8px; padding: 8px 11px; font-size: 10px; }
   .lift-hotspot.is-one { top: 27%; right: 8%; }
   .lift-hotspot.is-two { top: 45%; left: 8%; }
   .lift-hotspot.is-three { top: 60%; right: 10%; }
