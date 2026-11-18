@@ -120,7 +120,7 @@ export default function BrandingPage() {
             </div>
             <div className="brand-story-copy">
               <p className="eyebrow light"><span /> Nera&apos;yı tanıyın</p>
-              <h2>Tek bir uygulamadan değil,<br /><em>bütüncül bir bakıştan</em> söz ediyoruz.</h2>
+              <h2>Bütüncül Yaklaşım<br /><em>&amp; Kişiye Özel Çözümler</em></h2>
               <p>Saç, cilt ve medikal estetik ihtiyaçları birbirinden kopuk başlıklar değildir. Nera Clinic&apos;te ilk adım, sizi dinlemek ve sizin için anlamlı olan yaklaşımı birlikte netleştirmektir.</p>
               <div className="brand-story-signature"><span>Nera Clinic</span><small>Bedenimiz en kıymetli emanetimizdir.</small></div>
               <a className="button button-light" href="#contact">Nera ile tanışın <Arrow /></a>
