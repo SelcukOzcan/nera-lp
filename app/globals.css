@@ -957,7 +957,31 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 
 .brand-faq { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw; }
 .brand-faq h2 { margin: 0; color: var(--wine-dark); font-size: clamp(48px, 4.7vw, 70px); line-height: .98; }
-.brand-dialog .analysis-intro { background: linear-gradient(135deg, #ead8cd, #fffaf6 80%); }
+.brand-dialog { overflow: hidden; }
+.brand-dialog .analysis-close { top: 10px; right: 10px; width: 40px; height: 40px; font-size: 22px; }
+.brand-dialog .analysis-intro { padding: 22px 28px 16px; background: linear-gradient(135deg, #ead8cd, #fffaf6 80%); }
+.brand-dialog .analysis-brand { margin-bottom: 14px; }
+.brand-dialog .analysis-eyebrow { margin-bottom: 8px; }
+.brand-dialog .analysis-intro h2 { font-size: 28px; line-height: 1.06; }
+.brand-dialog .analysis-intro p { margin-top: 8px; line-height: 1.45; }
+.brand-dialog .analysis-proof { margin-top: 9px; }
+.brand-dialog .analysis-body { gap: 9px; padding: 15px 28px 18px; }
+.brand-dialog .analysis-body label { gap: 5px; }
+.brand-dialog .analysis-body input[type="text"], .brand-dialog .analysis-body input[type="tel"] { height: 44px; }
+.brand-dialog .analysis-consent { font-size: 9px !important; line-height: 1.35; }
+.brand-dialog .analysis-submit { height: 46px; }
+.brand-dialog .analysis-whatsapp { min-height: 38px; }
+
+@media (max-height: 650px) {
+  .brand-dialog .analysis-intro { padding-top: 17px; padding-bottom: 12px; }
+  .brand-dialog .analysis-brand { margin-bottom: 9px; }
+  .brand-dialog .analysis-intro h2 { font-size: 25px; }
+  .brand-dialog .analysis-intro p, .brand-dialog .analysis-proof { display: none; }
+  .brand-dialog .analysis-body { gap: 7px; padding-top: 12px; padding-bottom: 14px; }
+  .brand-dialog .analysis-body input[type="text"], .brand-dialog .analysis-body input[type="tel"] { height: 40px; }
+  .brand-dialog .analysis-submit { height: 42px; }
+  .brand-dialog .analysis-whatsapp { min-height: 34px; }
+}
 
 @media (max-width: 1180px) {
   .brand-hero { grid-template-columns: .92fr 1.08fr; }

@@ -60,7 +60,6 @@ const services = [
 
 const faqs = [
   ["İlk görüşmede ne konuşulur?", "İhtiyacınız, beklentiniz ve daha önceki uygulama deneyiminiz dinlenir. Uygun seçenekler, hekim değerlendirmesinin ardından sizinle paylaşılır."],
-  ["Hangi hekimle görüşeceğim?", "Görüşeceğiniz hekim, ilgilendiğiniz uygulama ve ihtiyacınıza göre netleşir. Saç sağlığı ve saç ekimi süreçlerinde Dr. Mehmet Doğruer; cilt ve medikal estetik odağında Dr. Nuran Erdağı öne çıkar."],
   ["Kliniğe nasıl ulaşabilirim?", "Nera Clinic, Şenlikköy Mahallesi Florya Caddesi No:47/1 adresinde; Bakırköy, İstanbul'dadır. Randevu öncesinde ekibimiz ulaşım bilgisini paylaşabilir."],
   ["Görüşme sonrasında hemen karar vermem gerekir mi?", "Hayır. İlk görüşmenin amacı ihtiyacınızı anlamak, uygunluğu değerlendirmek ve süreci açık biçimde anlatmaktır."],
 ];
@@ -94,7 +93,7 @@ export default function BrandingPage() {
         <section className="brand-hero" id="top">
           <div className="brand-hero-copy">
             <p className="eyebrow"><span /> Nera Clinic · Florya / Bakırköy</p>
-            <h1>Kendinizi iyi hissetmeye,<br /><em>sizi dinleyerek</em> başlarız.</h1>
+            <h1>Bilimsel yaklaşım,<br /><em>kişisel dokunuş,</em><br />doğal görünüm</h1>
             <p>İstanbul&apos;da saç sağlığı, medikal estetik ve cilt uygulamalarını; ihtiyacınızı anlayan kişisel bir değerlendirmeyle ele alıyoruz.</p>
             <div className="brand-hero-actions">
               <a className="button button-primary" href="#contact">Görüşme planlayın <Arrow /></a>
@@ -148,7 +147,7 @@ export default function BrandingPage() {
               </article>
               <article>
                 <div className="brand-doctor-image"><Image src={`${basePath}/images/branding/dr-mehmet-dogruer.webp`} alt="Dr. Mehmet Doğruer" fill sizes="(max-width: 800px) 100vw, 50vw" /></div>
-                <div className="brand-doctor-copy"><span>02 · Saç ekimi &amp; saç sağlığı</span><h3>Dr. Mehmet<br />Doğruer</h3><p>Saç ekimi ve saç sağlığını; donör alan, saç yapısı ve kişisel beklentiyi birlikte değerlendiren planlı bir süreç olarak ele alır.</p><a href="#contact">Görüşme planlayın <Arrow /></a></div>
+                <div className="brand-doctor-copy"><span>02 · Medikal estetik &amp; saç ekimi</span><h3>Dr. Mehmet<br />Doğruer</h3><p>Medikal estetik ve saç ekimi uygulamalarını; kişisel ihtiyaçları, doğal görünümü ve uzun vadeli planlamayı birlikte değerlendiren bütüncül bir yaklaşımla ele alır.</p><a href="#contact">Görüşme planlayın <Arrow /></a></div>
               </article>
             </div>
           </section>
