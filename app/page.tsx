@@ -3,6 +3,7 @@ import HeroSlider from "./HeroSlider";
 import LeadExperience from "./LeadExperience";
 import BrandingPage from "./BrandingPage";
 import FaceLiftPage from "./FaceLiftPage";
+import HairTreatmentsPage from "./HairTreatmentsPage";
 import SiteHeader from "./SiteHeader";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -209,5 +210,5 @@ function LaserPage() {
 
 export default function Home() {
   const variant = process.env.NEXT_PUBLIC_SITE_VARIANT;
-  return variant === "branding" ? <BrandingPage /> : variant === "face-lift" ? <FaceLiftPage /> : <LaserPage />;
+  return variant === "branding" ? <BrandingPage /> : variant === "face-lift" ? <FaceLiftPage /> : variant === "hair-treatments" ? <HairTreatmentsPage /> : <LaserPage />;
 }

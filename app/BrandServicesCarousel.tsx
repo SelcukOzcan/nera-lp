@@ -13,7 +13,15 @@ type Service = {
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export default function BrandServicesCarousel({ services }: { services: Service[] }) {
+export default function BrandServicesCarousel({
+  services,
+  folder = "branding",
+  ctaLabel = "Ön değerlendirme",
+}: {
+  services: Service[];
+  folder?: string;
+  ctaLabel?: string;
+}) {
   const track = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
@@ -35,10 +43,10 @@ export default function BrandServicesCarousel({ services }: { services: Service[
     </div>
     <div className="brand-service-grid" ref={track} onScroll={syncActive}>
       {services.map((service, index) => <article key={service.title}>
-        <Image src={`${basePath}/images/branding/${service.image}`} alt={`${service.title} yaklaşımı`} fill sizes="(max-width: 700px) 82vw, (max-width: 1180px) 45vw, 430px" style={{ objectPosition: service.position }} priority={index === 0} />
+        <Image src={`${basePath}/images/${folder}/${service.image}`} alt={`${service.title} yaklaşımı`} fill sizes="(max-width: 700px) 82vw, (max-width: 1180px) 45vw, 430px" style={{ objectPosition: service.position }} priority={index === 0} />
         <div className="brand-service-overlay" />
         <span>{service.number}</span>
-        <div><h3>{service.title}</h3><p>{service.text}</p><a href="#contact" aria-label={`${service.title} için görüşme planlayın`}>Ön değerlendirme <span className="arrow" aria-hidden="true">↗</span></a></div>
+        <div><h3>{service.title}</h3><p>{service.text}</p><a href="#contact" aria-label={`${service.title} için ${ctaLabel}`}>{ctaLabel} <span className="arrow" aria-hidden="true">↗</span></a></div>
       </article>)}
     </div>
   </div>;

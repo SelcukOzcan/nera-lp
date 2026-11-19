@@ -4,8 +4,20 @@ import "./globals.css";
 const variant = process.env.NEXT_PUBLIC_SITE_VARIANT;
 const isBranding = variant === "branding";
 const isFaceLift = variant === "face-lift";
+const isHairTreatments = variant === "hair-treatments";
 
-export const metadata: Metadata = isFaceLift ? {
+export const metadata: Metadata = isHairTreatments ? {
+  metadataBase: new URL("https://pro.neraclinic.com"),
+  title: "Saç Tedavileri ve Saç Eksozomu İstanbul | Nera Clinic",
+  description: "Saç mezoterapisi, saç eksozomu, PrimeHair, saç lazeri ve DPG seçeneklerinin saç dökülme tipi ve saçlı deri ihtiyacına göre hekim tarafından değerlendirildiği Nera Clinic yaklaşımı.",
+  robots: { index: false, follow: false },
+  openGraph: {
+    title: "Saç Tedavileri ve Saç Eksozomu | Nera Clinic",
+    description: "Saç dökülmesinde önce nedeni, sonra kişiye uygun yaklaşımı değerlendiren hekim odaklı plan.",
+    locale: "tr_TR",
+    type: "website",
+  },
+} : isFaceLift ? {
   metadataBase: new URL("https://pro.neraclinic.com"),
   title: "Ameliyatsız Yüz Germe İstanbul | Nera Clinic",
   description: "Doublo, PLLA, Touch Up Lift ve Planiti seçeneklerinin yüz anatomisi ve kişisel ihtiyaç doğrultusunda hekim tarafından değerlendirildiği Nera Clinic yaklaşımı.",
