@@ -3,6 +3,7 @@ import BrandHeroSlider, { BrandHeroSlide } from "./BrandHeroSlider";
 import BrandServicesCarousel from "./BrandServicesCarousel";
 import BrandingExperience from "./BrandingExperience";
 import SiteHeader from "./SiteHeader";
+import LeadForm from "./LeadForm";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const whatsapp = "https://wa.me/905441149094?text=Merhaba%2C%20Nera%20Clinic%20sa%C3%A7%20tedavileri%20ve%20sa%C3%A7%20eksozomu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
@@ -100,7 +101,7 @@ export default function HairTreatmentsPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/v2/sac-tedavileri/",
+    url: "https://pro.neraclinic.com/sac-tedavileri/",
     telephone: "+90 533 922 02 51",
     address: {
       "@type": "PostalAddress",
@@ -259,14 +260,7 @@ export default function HairTreatmentsPage() {
             <p>Bilgilerinizi bırakın; ekibimiz saç sağlığı uygulamaları ve hekim görüşmesi için size ulaşsın.</p>
             <div className="brand-contact-actions"><a href="tel:+905339220251"><span aria-hidden="true">↗</span><small>Telefon</small><strong>Hemen arayın</strong></a><a className="is-whatsapp" href={whatsapp} target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>WhatsApp</small><strong>Mesaj gönderin</strong></a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>Adres</small><strong>Yol tarifi alın</strong></a></div>
           </div>
-          <form className="lead-form" aria-describedby="hair-prototype-note">
-            <div className="form-heading"><span>Saç değerlendirmesi talebi</span><strong>Size ulaşalım</strong></div>
-            <div className="field-row"><label>Adınız<input type="text" name="name" autoComplete="name" placeholder="Adınız" /></label><label>Telefon<input type="tel" name="phone" autoComplete="tel" placeholder="05__ ___ __ __" /></label></div>
-            <label>Öncelikli ihtiyacınız<select name="priority" defaultValue=""><option value="" disabled>Seçiniz</option><option>Saç dökülmesi</option><option>Saç mezoterapisi</option><option>Saç eksozomu</option><option>Saç lazeri</option><option>Saç kıran</option><option>Saç ekimi</option><option>Genel bilgi</option></select></label>
-            <label className="consent"><input type="checkbox" /> <span><a href="https://neraclinic.com/kvkk/" target="_blank" rel="noopener">KVKK aydınlatma metnini</a> okudum; iletişim amacıyla aranmayı kabul ediyorum.</span></label>
-            <button className="button button-submit" type="button">Saç Değerlendirmesi Talebi <Arrow /></button>
-            <p id="hair-prototype-note">Prototip formudur; veri göndermez.</p>
-          </form>
+          <LeadForm eyebrow="Saç değerlendirmesi talebi" selectLabel="Öncelikli ihtiyacınız" selectName="priority" options={["Saç dökülmesi", "Saç mezoterapisi", "Saç eksozomu", "Saç lazeri", "Saç kıran", "Saç ekimi", "Genel bilgi"]} service="Saç tedavileri" submitLabel="Saç Değerlendirmesi Talebi" noteId="hair-prototype-note" />
         </section>
       </div>
     </main>

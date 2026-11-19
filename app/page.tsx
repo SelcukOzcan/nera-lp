@@ -5,6 +5,7 @@ import BrandingPage from "./BrandingPage";
 import FaceLiftPage from "./FaceLiftPage";
 import HairTreatmentsPage from "./HairTreatmentsPage";
 import SiteHeader from "./SiteHeader";
+import LeadForm from "./LeadForm";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -153,19 +154,16 @@ function LaserPage() {
             <div className="address-card"><span>Florya / Bakırköy</span><strong>Şenlikköy, Florya Cd. No:47/1<br />34153 Bakırköy / İstanbul</strong></div>
           </div>
 
-          <form className="lead-form reveal-section" aria-describedby="prototype-note">
-            <div className="form-heading"><span>Ücretsiz ön değerlendirme</span><strong>Size ulaşalım</strong></div>
-            <div className="field-row">
-              <label>Adınız<input type="text" name="name" autoComplete="name" placeholder="Adınız" /></label>
-              <label>Telefon<input type="tel" name="phone" autoComplete="tel" placeholder="05__ ___ __ __" /></label>
-            </div>
-            <label>İlgilendiğiniz bölge
-              <select name="area" defaultValue=""><option value="" disabled>Seçiniz</option><option>Yüz</option><option>Koltuk altı</option><option>Bacak</option><option>Bikini bölgesi</option><option>Sırt / göğüs</option><option>Diğer</option></select>
-            </label>
-            <label className="consent"><input type="checkbox" /> <span>KVKK aydınlatma metnini okudum; iletişim amacıyla aranmayı kabul ediyorum.</span></label>
-            <button className="button button-submit" type="button">Ön Değerlendirme Talep Et <Arrow /></button>
-            <p id="prototype-note">Prototip formudur; veri göndermez.</p>
-          </form>
+          <LeadForm
+            className="reveal-section"
+            eyebrow="Ücretsiz ön değerlendirme"
+            selectLabel="İlgilendiğiniz bölge"
+            selectName="area"
+            options={["Yüz", "Koltuk altı", "Bacak", "Bikini bölgesi", "Sırt / göğüs", "Diğer"]}
+            service="Lazer epilasyon"
+            submitLabel="Ön Değerlendirme Talep Et"
+            noteId="prototype-note"
+          />
         </section>
 
         <section className="faq section" id="sss">

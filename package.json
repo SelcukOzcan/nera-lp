@@ -12,6 +12,10 @@
     "build:v2:branding": "NEXT_PUBLIC_SITE_VARIANT=branding NEXT_PUBLIC_BASE_PATH=/v2/branding next build",
     "build:v2:yuz-germe": "NEXT_PUBLIC_SITE_VARIANT=face-lift NEXT_PUBLIC_BASE_PATH=/v2/yuz-germe next build",
     "build:v2:sac-tedavileri": "NEXT_PUBLIC_SITE_VARIANT=hair-treatments NEXT_PUBLIC_BASE_PATH=/v2/sac-tedavileri next build",
+    "build:pro:branding": "NEXT_PUBLIC_SITE_VARIANT=branding next build",
+    "build:pro:lazer": "NEXT_PUBLIC_BASE_PATH=/lazer-epilasyon next build",
+    "build:pro:yuz-germe": "NEXT_PUBLIC_SITE_VARIANT=face-lift NEXT_PUBLIC_BASE_PATH=/yuz-germe next build",
+    "build:pro:sac-tedavileri": "NEXT_PUBLIC_SITE_VARIANT=hair-treatments NEXT_PUBLIC_BASE_PATH=/sac-tedavileri next build",
     "start": "next start",
     "lint": "eslint ."
   },

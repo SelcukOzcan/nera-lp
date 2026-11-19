@@ -3,6 +3,7 @@ import BrandingExperience from "./BrandingExperience";
 import BrandHeroSlider from "./BrandHeroSlider";
 import BrandServicesCarousel from "./BrandServicesCarousel";
 import SiteHeader from "./SiteHeader";
+import LeadForm from "./LeadForm";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -71,7 +72,7 @@ export default function BrandingPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/v2/branding/",
+    url: "https://pro.neraclinic.com/",
     telephone: "+90 533 922 02 51",
     address: {
       "@type": "PostalAddress",
@@ -193,19 +194,16 @@ export default function BrandingPage() {
                 <a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>Adres</small><strong>Yol tarifi alın</strong></a>
               </div>
             </div>
-            <form className="lead-form reveal-section" aria-describedby="brand-prototype-note">
-              <div className="form-heading"><span>Görüşme talebi</span><strong>Size ulaşalım</strong></div>
-              <div className="field-row">
-                <label>Adınız<input type="text" name="name" autoComplete="name" placeholder="Adınız" /></label>
-                <label>Telefon<input type="tel" name="phone" autoComplete="tel" placeholder="05__ ___ __ __" /></label>
-              </div>
-              <label>İlgilendiğiniz hizmet
-                <select name="service" defaultValue=""><option value="" disabled>Seçiniz</option>{services.map((service) => <option key={service.title}>{service.title}</option>)}</select>
-              </label>
-              <label className="consent"><input type="checkbox" /> <span>KVKK aydınlatma metnini okudum; iletişim amacıyla aranmayı kabul ediyorum.</span></label>
-              <button className="button button-submit" type="button">Görüşme Talebi Oluştur <Arrow /></button>
-              <p id="brand-prototype-note">Prototip formudur; veri göndermez.</p>
-            </form>
+            <LeadForm
+              className="reveal-section"
+              eyebrow="Görüşme talebi"
+              selectLabel="İlgilendiğiniz hizmet"
+              selectName="service"
+              options={services.map((service) => service.title)}
+              service="Nera Clinic"
+              submitLabel="Görüşme Talebi Oluştur"
+              noteId="brand-prototype-note"
+            />
           </section>
         </div>
       </main>

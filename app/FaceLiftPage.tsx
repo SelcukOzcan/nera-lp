@@ -2,6 +2,7 @@ import Image from "next/image";
 import BrandHeroSlider, { BrandHeroSlide } from "./BrandHeroSlider";
 import BrandingExperience from "./BrandingExperience";
 import SiteHeader from "./SiteHeader";
+import LeadForm from "./LeadForm";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const whatsapp = "https://wa.me/905441149094?text=Merhaba%2C%20Nera%20Clinic%20ameliyats%C4%B1z%20y%C3%BCz%20germe%20yakla%C5%9F%C4%B1m%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
@@ -34,7 +35,7 @@ export default function FaceLiftPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/v2/yuz-germe/",
+    url: "https://pro.neraclinic.com/yuz-germe/",
     telephone: "+90 533 922 02 51",
     address: { "@type": "PostalAddress", streetAddress: "Şenlikköy, Florya Cd. No:47/1", addressLocality: "Bakırköy", addressRegion: "İstanbul", postalCode: "34153", addressCountry: "TR" },
   };
@@ -112,7 +113,7 @@ export default function FaceLiftPage() {
 
         <section className="lift-contact lift-section" id="contact">
           <div className="lift-contact-copy"><p className="eyebrow light"><span /> İlk adım</p><h2>Yüzünüzün ihtiyacını konuşalım,<br /><em>kişisel planı değerlendirelim.</em></h2><p>Bilgilerinizi bırakın; ekibimiz uygulama seçenekleri ve hekim görüşmesi için size ulaşsın.</p><div className="brand-contact-actions"><a href="tel:+905339220251"><span aria-hidden="true">↗</span><small>Telefon</small><strong>Hemen arayın</strong></a><a className="is-whatsapp" href={whatsapp} target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>WhatsApp</small><strong>Mesaj gönderin</strong></a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>Adres</small><strong>Yol tarifi alın</strong></a></div></div>
-          <form className="lead-form" aria-describedby="lift-prototype-note"><div className="form-heading"><span>Bilgi ve görüşme talebi</span><strong>Size ulaşalım</strong></div><div className="field-row"><label>Adınız<input type="text" name="name" autoComplete="name" placeholder="Adınız" /></label><label>Telefon<input type="tel" name="phone" autoComplete="tel" placeholder="05__ ___ __ __" /></label></div><label>Öncelikli ihtiyacınız<select name="priority" defaultValue=""><option value="" disabled>Seçiniz</option><option>Yüz ovali</option><option>Çene hattı</option><option>Gıdı ve boyun</option><option>Cilt kalitesi</option><option>Hacim kaybı</option><option>Genel bilgi</option></select></label><label className="consent"><input type="checkbox" /> <span>KVKK aydınlatma metnini okudum; iletişim amacıyla aranmayı kabul ediyorum.</span></label><button className="button button-submit" type="button">Bilgi ve Görüşme Talebi <Arrow /></button><p id="lift-prototype-note">Prototip formudur; veri göndermez.</p></form>
+          <LeadForm eyebrow="Bilgi ve görüşme talebi" selectLabel="Öncelikli ihtiyacınız" selectName="priority" options={["Yüz ovali", "Çene hattı", "Gıdı ve boyun", "Cilt kalitesi", "Hacim kaybı", "Genel bilgi"]} service="Ameliyatsız yüz germe" submitLabel="Bilgi ve Görüşme Talebi" noteId="lift-prototype-note" />
         </section>
       </div>
     </main>
