@@ -120,7 +120,7 @@ export default function HairTreatmentsPage() {
       <section className="lift-hero hair-hero" id="top">
         <div className="lift-hero-copy">
           <p className="eyebrow"><span /> Nera Clinic · Saç tedavileri</p>
-          <h1><span>Saç dökülmesinde</span><em>önce nedeni,</em><span>sonra doğru yaklaşımı.</span></h1>
+          <h1><span>Saçın ihtiyacına göre planlanan</span><em>rejeneratif uygulamalar.</em></h1>
           <p>Saç mezoterapisi, saç eksozomu, PrimeHair, saç lazeri ve DPG seçeneklerini; saçlı deri, dökülme tipi ve kişisel ihtiyacınız doğrultusunda hekim değerlendirmesiyle ele alıyoruz.</p>
           <div className="lift-hero-actions">
             <a className="button button-primary" href="#contact">Saç değerlendirmesi planlayın <Arrow /></a>
