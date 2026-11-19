@@ -72,7 +72,7 @@ export default function BrandingPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/",
+    url: "https://pro.neraclinic.com/v2/branding/",
     telephone: "+90 533 922 02 51",
     address: {
       "@type": "PostalAddress",
@@ -194,16 +194,7 @@ export default function BrandingPage() {
                 <a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>Adres</small><strong>Yol tarifi alın</strong></a>
               </div>
             </div>
-            <LeadForm
-              className="reveal-section"
-              eyebrow="Görüşme talebi"
-              selectLabel="İlgilendiğiniz hizmet"
-              selectName="service"
-              options={services.map((service) => service.title)}
-              service="Nera Clinic"
-              submitLabel="Görüşme Talebi Oluştur"
-              noteId="brand-prototype-note"
-            />
+            <LeadForm className="reveal-section" eyebrow="Görüşme talebi" service="Nera Clinic Genel" submitLabel="Görüşme Talebi Oluştur" noteId="brand-form-note" />
           </section>
         </div>
       </main>

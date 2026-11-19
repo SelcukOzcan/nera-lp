@@ -35,7 +35,7 @@ export default function FaceLiftPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/yuz-germe/",
+    url: "https://pro.neraclinic.com/v2/yuz-germe/",
     telephone: "+90 533 922 02 51",
     address: { "@type": "PostalAddress", streetAddress: "Şenlikköy, Florya Cd. No:47/1", addressLocality: "Bakırköy", addressRegion: "İstanbul", postalCode: "34153", addressCountry: "TR" },
   };
@@ -113,7 +113,7 @@ export default function FaceLiftPage() {
 
         <section className="lift-contact lift-section" id="contact">
           <div className="lift-contact-copy"><p className="eyebrow light"><span /> İlk adım</p><h2>Yüzünüzün ihtiyacını konuşalım,<br /><em>kişisel planı değerlendirelim.</em></h2><p>Bilgilerinizi bırakın; ekibimiz uygulama seçenekleri ve hekim görüşmesi için size ulaşsın.</p><div className="brand-contact-actions"><a href="tel:+905339220251"><span aria-hidden="true">↗</span><small>Telefon</small><strong>Hemen arayın</strong></a><a className="is-whatsapp" href={whatsapp} target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>WhatsApp</small><strong>Mesaj gönderin</strong></a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>Adres</small><strong>Yol tarifi alın</strong></a></div></div>
-          <LeadForm eyebrow="Bilgi ve görüşme talebi" selectLabel="Öncelikli ihtiyacınız" selectName="priority" options={["Yüz ovali", "Çene hattı", "Gıdı ve boyun", "Cilt kalitesi", "Hacim kaybı", "Genel bilgi"]} service="Ameliyatsız yüz germe" submitLabel="Bilgi ve Görüşme Talebi" noteId="lift-prototype-note" />
+          <LeadForm eyebrow="Bilgi ve görüşme talebi" service="Ameliyatsız Yüz Germe" submitLabel="Bilgi ve Görüşme Talebi" noteId="lift-form-note" />
         </section>
       </div>
     </main>

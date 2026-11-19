@@ -101,7 +101,7 @@ export default function HairTreatmentsPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/sac-tedavileri/",
+    url: "https://pro.neraclinic.com/v2/sac-tedavileri/",
     telephone: "+90 533 922 02 51",
     address: {
       "@type": "PostalAddress",
@@ -260,7 +260,7 @@ export default function HairTreatmentsPage() {
             <p>Bilgilerinizi bırakın; ekibimiz saç sağlığı uygulamaları ve hekim görüşmesi için size ulaşsın.</p>
             <div className="brand-contact-actions"><a href="tel:+905339220251"><span aria-hidden="true">↗</span><small>Telefon</small><strong>Hemen arayın</strong></a><a className="is-whatsapp" href={whatsapp} target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>WhatsApp</small><strong>Mesaj gönderin</strong></a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><small>Adres</small><strong>Yol tarifi alın</strong></a></div>
           </div>
-          <LeadForm eyebrow="Saç değerlendirmesi talebi" selectLabel="Öncelikli ihtiyacınız" selectName="priority" options={["Saç dökülmesi", "Saç mezoterapisi", "Saç eksozomu", "Saç lazeri", "Saç kıran", "Saç ekimi", "Genel bilgi"]} service="Saç tedavileri" submitLabel="Saç Değerlendirmesi Talebi" noteId="hair-prototype-note" />
+          <LeadForm eyebrow="Saç değerlendirmesi talebi" service="Saç Tedavileri" submitLabel="Saç Değerlendirmesi Talebi" noteId="hair-form-note" />
         </section>
       </div>
     </main>

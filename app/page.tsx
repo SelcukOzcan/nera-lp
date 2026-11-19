@@ -154,16 +154,7 @@ function LaserPage() {
             <div className="address-card"><span>Florya / Bakırköy</span><strong>Şenlikköy, Florya Cd. No:47/1<br />34153 Bakırköy / İstanbul</strong></div>
           </div>
 
-          <LeadForm
-            className="reveal-section"
-            eyebrow="Ücretsiz ön değerlendirme"
-            selectLabel="İlgilendiğiniz bölge"
-            selectName="area"
-            options={["Yüz", "Koltuk altı", "Bacak", "Bikini bölgesi", "Sırt / göğüs", "Diğer"]}
-            service="Lazer epilasyon"
-            submitLabel="Ön Değerlendirme Talep Et"
-            noteId="prototype-note"
-          />
+          <LeadForm className="reveal-section" eyebrow="Ücretsiz ön değerlendirme" service="Lazer Epilasyon" submitLabel="Ön Değerlendirme Talep Et" noteId="laser-form-note" />
         </section>
 
         <section className="faq section" id="sss">

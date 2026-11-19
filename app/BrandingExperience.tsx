@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useCallback, useEffect, useRef } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
+import { submitLead } from "./leadSubmission";
 
 const DAY = 86_400_000;
 
@@ -33,6 +34,9 @@ export default function BrandingExperience({ variant = "branding" }: { variant?:
   const proof = isFaceLift ? "Hekim değerlendirmesi · Kişisel plan" : isHairTreatments ? "Saçlı deri değerlendirmesi · Kişisel plan" : "Saç · Cilt · Medikal estetik";
   const submitLabel = isFaceLift ? "Bilgi ve görüşme talebi" : isHairTreatments ? "Saç değerlendirmesi talebi" : "Görüşme talebi oluştur";
   const floatingLabel = isFaceLift ? "Bilgi Alın" : isHairTreatments ? "Saç Analizi" : "Görüşme Planla";
+  const service = isFaceLift ? "Ameliyatsız yüz germe" : isHairTreatments ? "Saç tedavileri" : "Nera Clinic";
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
   const dialogRef = useRef<HTMLDialogElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
   const remember = useCallback(() => { try { localStorage.setItem(popupKey, String(Date.now() + DAY)); } catch {} }, [popupKey]);
@@ -61,24 +65,27 @@ export default function BrandingExperience({ variant = "branding" }: { variant?:
     return () => window.clearInterval(timer);
   }, [open, popupKey]);
 
-  const continueInForm = (event: FormEvent<HTMLFormElement>) => {
+  const continueInForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const mainForm = document.querySelector<HTMLFormElement>("#contact .lead-form");
-    const name = mainForm?.elements.namedItem("name") as HTMLInputElement | null;
-    const phone = mainForm?.elements.namedItem("phone") as HTMLInputElement | null;
-    if (name) name.value = String(data.get("popup-name") ?? "");
-    if (phone) phone.value = String(data.get("popup-phone") ?? "");
-    close();
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.setTimeout(() => phone?.focus(), 450);
+    setStatus("submitting");
+    setMessage("");
+    try {
+      await submitLead({ name: String(data.get("popup-name") ?? ""), phone: String(data.get("popup-phone") ?? ""), service, note: String(data.get("popup-note") ?? ""), formLocation: `${service} popup`, source: "popup" });
+      setStatus("success");
+      event.currentTarget.reset();
+    } catch (error) {
+      setStatus("error");
+      setMessage(error instanceof Error && error.message === "invalid_phone" ? "Lütfen telefon numaranızı 05XX XXX XX XX biçiminde kontrol edin." : "Talebiniz şu anda iletilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.");
+      if (!(error instanceof Error && error.message === "invalid_phone")) window.dataLayer?.push({ event: "lead_fallback", lead_service: service, lead_source: "popup" });
+    }
   };
 
   return <>
     <dialog className="analysis-dialog brand-dialog" ref={dialogRef} onClose={() => openerRef.current?.focus({ preventScroll: true })} onClick={(event) => { if (event.target === dialogRef.current) close(); }} aria-labelledby="brand-dialog-title">
       <button className="analysis-close" type="button" onClick={close} aria-label="Pencereyi kapat">×</button>
       <div className="analysis-intro"><span className="analysis-brand">Nera Clinic · Florya / Bakırköy</span><span className="analysis-eyebrow">{eyebrow}</span><h2 id="brand-dialog-title" tabIndex={-1}>{title}</h2><p>{intro}</p><div className="analysis-proof">{proof}</div></div>
-      <form className="analysis-body" onSubmit={continueInForm}><label>Adınız soyadınız<input name="popup-name" type="text" autoComplete="name" placeholder="Ad Soyad" minLength={2} required /></label><label>Telefon numaranız<input name="popup-phone" type="tel" autoComplete="tel" placeholder="05XX XXX XX XX" minLength={10} required /></label><label className="analysis-consent"><input type="checkbox" required /><span><a href="https://neraclinic.com/kvkk/" target="_blank" rel="noopener">KVKK aydınlatma metnini</a> okudum; iletişim amacıyla aranmayı ve bilgilerimin ana forma aktarılmasını kabul ediyorum.</span></label><button className="analysis-submit" type="submit"><span>{submitLabel}</span><span aria-hidden="true">↗</span></button><p>Prototip formudur · Veri göndermez</p><a className="analysis-whatsapp" href={`https://wa.me/905441149094?text=${whatsappText}`} target="_blank" rel="noopener">WhatsApp&apos;tan yazmayı tercih ederim</a></form>
+      {status === "success" ? <div className="analysis-body analysis-success"><p id="nera-popup-lead-success" className="lead-status is-success" aria-live="polite">Talebiniz alındı. Nera Clinic ekibi sizinle iletişime geçecek.</p></div> : <form className="analysis-body" onSubmit={continueInForm}><label>Adınız soyadınız<input name="popup-name" type="text" autoComplete="name" placeholder="Ad Soyad" minLength={2} required /></label><label>Telefon numaranız<input name="popup-phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="05XX XXX XX XX" minLength={10} required /></label><label>Notunuz<textarea name="popup-note" placeholder="İlgilendiğiniz uygulamayı veya sorunuzu kısaca yazabilirsiniz." maxLength={1000} /></label><label className="analysis-consent"><input type="checkbox" required /><span><a href="https://neraclinic.com/kvkk/" target="_blank" rel="noopener">KVKK aydınlatma metnini</a> okudum; iletişim amacıyla aranmayı kabul ediyorum.</span></label><button className="analysis-submit" type="submit" disabled={status === "submitting"}><span>{status === "submitting" ? "İletiliyor…" : submitLabel}</span><span aria-hidden="true">↗</span></button>{status === "error" && <p className="lead-status is-error" aria-live="polite">{message}</p>}<p>Bilgileriniz güvenli biçimde Nera Clinic ekibine iletilir.</p><a className="analysis-whatsapp" href={`https://wa.me/905441149094?text=${whatsappText}`} target="_blank" rel="noopener">WhatsApp&apos;tan yazmayı tercih ederim</a></form>}
     </dialog>
     <nav className="floating-actions" aria-label="Hızlı iletişim"><button className="floating-analysis" type="button" onClick={open} aria-haspopup="dialog"><Icon type="chat" /><span>{floatingLabel}</span></button><a className="floating-whatsapp" href={`https://wa.me/905441149094?text=${whatsappText}`} target="_blank" rel="noopener" aria-label="WhatsApp ile iletişim"><Icon type="whatsapp" /><span>WhatsApp</span></a><a className="floating-call" href="tel:+905339220251" aria-label="Nera Clinic'i ara"><Icon type="phone" /><span>Hemen Ara</span></a></nav>
   </>;

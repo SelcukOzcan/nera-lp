@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useCallback, useEffect, useRef } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
+import { submitLead } from "./leadSubmission";
 
 const POPUP_KEY = "nera-laser-popup-until";
 const DAY = 86_400_000;
@@ -32,6 +33,8 @@ function PhoneIcon() {
 }
 
 export default function LeadExperience() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
   const dialogRef = useRef<HTMLDialogElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
 
@@ -70,17 +73,20 @@ export default function LeadExperience() {
     return () => window.clearInterval(timer);
   }, [open]);
 
-  const continueInForm = (event: FormEvent<HTMLFormElement>) => {
+  const continueInForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const mainForm = document.querySelector<HTMLFormElement>("#contact .lead-form");
-    const name = mainForm?.elements.namedItem("name") as HTMLInputElement | null;
-    const phone = mainForm?.elements.namedItem("phone") as HTMLInputElement | null;
-    if (name) name.value = String(data.get("popup-name") ?? "");
-    if (phone) phone.value = String(data.get("popup-phone") ?? "");
-    close();
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.setTimeout(() => phone?.focus(), 450);
+    setStatus("submitting");
+    setMessage("");
+    try {
+      await submitLead({ name: String(data.get("popup-name") ?? ""), phone: String(data.get("popup-phone") ?? ""), service: "Lazer epilasyon", note: String(data.get("popup-note") ?? ""), formLocation: "Lazer epilasyon popup", source: "popup" });
+      setStatus("success");
+      event.currentTarget.reset();
+    } catch (error) {
+      setStatus("error");
+      setMessage(error instanceof Error && error.message === "invalid_phone" ? "Lütfen telefon numaranızı 05XX XXX XX XX biçiminde kontrol edin." : "Talebiniz şu anda iletilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.");
+      if (!(error instanceof Error && error.message === "invalid_phone")) window.dataLayer?.push({ event: "lead_fallback", lead_service: "Lazer epilasyon", lead_source: "popup" });
+    }
   };
 
   return (
@@ -94,14 +100,16 @@ export default function LeadExperience() {
           <p id="analysis-description">Bilgilerinizi bırakın; ana formda bölge seçiminizi tamamlayarak talebinizi hazırlayın.</p>
           <div className="analysis-proof">Kişisel değerlendirme · Üç teknoloji seçeneği</div>
         </div>
-        <form className="analysis-body" onSubmit={continueInForm}>
+        {status === "success" ? <div className="analysis-body analysis-success"><p id="nera-popup-lead-success" className="lead-status is-success" aria-live="polite">Talebiniz alındı. Nera Clinic ekibi sizinle iletişime geçecek.</p></div> : <form className="analysis-body" onSubmit={continueInForm}>
           <label>Adınız soyadınız<input name="popup-name" type="text" autoComplete="name" placeholder="Ad Soyad" minLength={2} required /></label>
-          <label>Telefon numaranız<input name="popup-phone" type="tel" autoComplete="tel" placeholder="05XX XXX XX XX" minLength={10} required /></label>
-          <label className="analysis-consent"><input type="checkbox" required /><span>İletişim amacıyla aranmayı ve bilgilerimin ana forma aktarılmasını kabul ediyorum.</span></label>
-          <button className="analysis-submit" type="submit"><span>Ücretsiz analizimi planla</span><span aria-hidden="true">↗</span></button>
+          <label>Telefon numaranız<input name="popup-phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="05XX XXX XX XX" minLength={10} required /></label>
+          <label>Notunuz<textarea name="popup-note" placeholder="İlgilendiğiniz uygulamayı veya sorunuzu kısaca yazabilirsiniz." maxLength={1000} /></label>
+          <label className="analysis-consent"><input type="checkbox" required /><span>İletişim amacıyla aranmayı kabul ediyorum.</span></label>
+          <button className="analysis-submit" type="submit" disabled={status === "submitting"}><span>{status === "submitting" ? "İletiliyor…" : "Ücretsiz analizimi planla"}</span><span aria-hidden="true">↗</span></button>
+          {status === "error" && <p className="lead-status is-error" aria-live="polite">{message}</p>}
           <p>Ücretsiz ön değerlendirme · İşlem zorunluluğu yok</p>
           <a className="analysis-whatsapp" href="https://wa.me/905441149094?text=Merhaba%2C%20Nera%20Clinic%20lazer%20epilasyon%20%C3%B6n%20de%C4%9Ferlendirmesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan yazmayı tercih ederim</a>
-        </form>
+        </form>}
       </dialog>
 
       <nav className="floating-actions" aria-label="Hızlı iletişim">
