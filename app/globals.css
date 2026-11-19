@@ -1362,15 +1362,28 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 .hair-mesotherapy-copy li p { margin: 3px 0 0; color: #cdb7ae; font-size: 9px; line-height: 1.5; }
 .hair-mesotherapy-copy .button { width: fit-content; }
 
+.hair-why { min-height: 690px !important; display: grid; grid-template-columns: 1.02fr .98fr; gap: 0; padding: 14px; background: #6f3735 !important; }
+.hair-why-visual { position: relative; min-height: 660px; overflow: hidden; border-radius: 30px 96px 30px 30px; isolation: isolate; }
+.hair-why-visual img { z-index: 0; object-fit: cover; object-position: center; transition: transform .8s ease; }
+.hair-why:hover .hair-why-visual img { transform: scale(1.025); }
+.hair-why-visual > span { position: absolute; z-index: 2; bottom: 24px; left: 24px; padding: 11px 15px; color: #fff; background: rgba(54,26,25,.72); border: 1px solid rgba(255,255,255,.24); border-radius: 999px; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(10px); }
+.hair-why-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(40px, 4.6vw, 76px); }
+.hair-why-copy h2 { margin: 0; color: #fff8f3; font-size: clamp(42px, 4vw, 62px); line-height: .98; }
+.hair-why-copy > p:not(.eyebrow) { max-width: 650px; margin: 24px 0; color: #dbc7bf; font-size: 12px; line-height: 1.75; }
+.hair-why-copy ol { display: grid; margin: 0 0 28px; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.15); }
+.hair-why-copy li { display: grid; grid-template-columns: 38px 1fr; gap: 12px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+.hair-why-copy li > span { color: #f0a38d; font-size: 9px; font-weight: 800; }
+.hair-why-copy li h3 { margin: 0; color: #fff8f3; font-family: var(--serif); font-size: 21px; font-weight: 500; line-height: 1.1; }
+.hair-why-copy li p { margin: 4px 0 0; color: #d4bdb4; font-size: 9px; line-height: 1.55; }
+.hair-why-copy .button { width: fit-content; }
+
 .hair-doctors .brand-section-heading { margin-bottom: 28px; }
 .hair-doctors .brand-section-heading > *, .hair-contact > * { min-width: 0; }
-.hair-doctors .brand-doctor-grid { grid-template-columns: 1.18fr .82fr; }
+.hair-doctors .brand-doctor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .hair-doctors .brand-doctor-grid article { min-height: 500px; }
-.hair-doctors .brand-doctor-grid article:first-child { grid-template-columns: 1.05fr .95fr; }
-.hair-doctors .brand-doctor-grid article:last-child { grid-template-columns: 1fr; grid-template-rows: 255px auto; }
-.hair-doctors .brand-doctor-grid article:last-child .brand-doctor-copy { padding-top: 25px; }
-.hair-doctors .brand-doctor-grid article:last-child .brand-doctor-copy > span { margin-bottom: 22px; }
-.hair-doctors .brand-doctor-grid article:last-child h3 { font-size: clamp(39px, 3.2vw, 52px); }
+.hair-doctors .brand-doctor-grid article:first-child, .hair-doctors .brand-doctor-grid article:last-child { grid-template-columns: minmax(260px, .95fr) minmax(0, 1.05fr); }
+.hair-doctors .brand-doctor-copy h3 { font-size: clamp(38px, 3.15vw, 52px); line-height: .95; white-space: nowrap; }
+.hair-doctors .brand-doctor-copy > span { margin-bottom: auto; }
 .hair-doctors .brand-doctor-grid article:first-child .brand-doctor-image img { object-position: 40% 46%; }
 .hair-doctors .brand-doctor-grid article:last-child .brand-doctor-image img { object-position: 50% 36%; }
 
@@ -1385,6 +1398,7 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
 .hair-transplant-visual > span { position: absolute; z-index: 2; right: 24px; bottom: 24px; display: inline-flex; align-items: center; gap: 15px; padding: 12px 16px; color: #fff; background: rgba(54,26,25,.72); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; font-size: 9px; font-weight: 800; letter-spacing: .05em; backdrop-filter: blur(10px); }
 
 .hair-process > div > p:not(.eyebrow) { max-width: 500px; margin: 24px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.hair-faq > div:first-child { align-self: center; }
 .hair-contact { background: linear-gradient(135deg, #6c3534, #351d1d) !important; }
 .hair-contact .consent a, .brand-dialog .analysis-consent a { color: var(--wine); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 .hair-footer .footer-bottom p { max-width: 980px; }
@@ -1400,15 +1414,16 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .hair-needs-visual { grid-column: 1 / 3; grid-row: auto; min-height: 330px; }
   .hair-doctors .brand-doctor-grid { grid-template-columns: 1fr 1fr; }
   .hair-doctors .brand-doctor-grid article:first-child, .hair-doctors .brand-doctor-grid article:last-child { grid-template-columns: 1fr; grid-template-rows: 330px auto; }
+  .hair-doctors .brand-doctor-copy > span { margin-bottom: 36px; }
 }
 
 @media (max-width: 960px) {
   .hair-hero { grid-template-columns: 1fr; }
   .hair-section-heading { grid-template-columns: 1fr; gap: 22px; }
   .hair-needs-grid { grid-template-columns: 1fr 1fr; }
-  .hair-mesotherapy, .hair-transplant { grid-template-columns: 1fr; }
-  .hair-mesotherapy-visual, .hair-transplant-visual { min-height: 540px; }
-  .hair-mesotherapy-copy, .hair-transplant-copy { padding: 58px 42px; }
+  .hair-mesotherapy, .hair-why, .hair-transplant { grid-template-columns: 1fr; }
+  .hair-mesotherapy-visual, .hair-why-visual, .hair-transplant-visual { min-height: 540px; }
+  .hair-mesotherapy-copy, .hair-why-copy, .hair-transplant-copy { padding: 58px 42px; }
   .hair-transplant-visual { order: -1; }
   .hair-doctors .brand-doctor-grid { grid-template-columns: 1fr; }
   .hair-doctors .brand-doctor-grid article:first-child, .hair-doctors .brand-doctor-grid article:last-child { grid-template-columns: minmax(260px, .92fr) 1.08fr; grid-template-rows: none; }
@@ -1420,15 +1435,15 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .hair-hero .brand-hero-slide:first-child img { object-position: 50% center !important; }
   .hair-needs { padding: 62px 18px; }
   .hair-section-heading { margin-bottom: 30px; }
-  .hair-section-heading h2, .hair-mesotherapy-copy h2, .hair-transplant-copy h2 { font-size: clamp(39px, 11.5vw, 51px); }
+  .hair-section-heading h2, .hair-mesotherapy-copy h2, .hair-why-copy h2, .hair-transplant-copy h2 { font-size: clamp(39px, 11.5vw, 51px); }
   .hair-needs-grid { grid-template-columns: 1fr; grid-template-rows: none; }
   .hair-needs-visual { grid-column: auto; min-height: 350px; }
   .hair-needs-grid article { min-height: 190px; padding: 22px; border-radius: 22px; }
   .hair-needs-grid h3 { font-size: 28px; }
   .hair-services .brand-service-grid article { min-height: 410px; }
-  .hair-mesotherapy, .hair-transplant { min-height: 0 !important; padding: 9px; }
-  .hair-mesotherapy-visual, .hair-transplant-visual { min-height: 390px; border-radius: 20px 58px 20px 20px; }
-  .hair-mesotherapy-copy, .hair-transplant-copy { padding: 48px 18px 42px; }
+  .hair-mesotherapy, .hair-why, .hair-transplant { min-height: 0 !important; padding: 9px; }
+  .hair-mesotherapy-visual, .hair-why-visual, .hair-transplant-visual { min-height: 390px; border-radius: 20px 58px 20px 20px; }
+  .hair-mesotherapy-copy, .hair-why-copy, .hair-transplant-copy { padding: 48px 18px 42px; }
   .hair-mesotherapy-visual > div:last-child { right: 16px; bottom: 16px; left: 16px; padding: 15px 16px; }
   .hair-doctors .brand-doctor-grid article:first-child, .hair-doctors .brand-doctor-grid article:last-child { grid-template-columns: 1fr; grid-template-rows: 330px auto; }
   .hair-doctors .brand-doctor-grid article { min-height: 0; }
@@ -1438,4 +1453,5 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .hair-contact .lead-form, .hair-contact .brand-contact-actions { width: 100%; min-width: 0; }
   .hair-transplant-visual { order: -1; }
   .hair-transplant-visual > span { right: 16px; bottom: 16px; }
+  .hair-faq > div:first-child { align-self: auto; }
 }

@@ -58,6 +58,12 @@ export const metadata: Metadata = isHairTreatments ? {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="tr">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5H9NCRWX" />
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());` }} />
+      </head>
       <body>{children}</body>
     </html>
   );

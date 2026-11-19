@@ -13,7 +13,7 @@ const menus = {
     ["Yaklaşım", "#yaklasim"], ["Kombinasyon", "#kombinasyon"], ["Uygulamalar", "#uygulamalar"], ["Hekim", "#hekim"], ["SSS", "#sss"],
   ],
   hairTreatments: [
-    ["Yaklaşım", "#yaklasim"], ["Uygulamalar", "#uygulamalar"], ["Hekimler", "#hekimler"], ["Saç Ekimi", "#sac-ekimi"], ["SSS", "#sss"],
+    ["Yaklaşım", "#yaklasim"], ["Uygulamalar", "#uygulamalar"], ["Neden Nera?", "#neden-nera"], ["Hekimler", "#hekimler"], ["SSS", "#sss"],
   ],
 };
 

@@ -10,7 +10,7 @@ const hairTransplantUrl = "https://hair.neraclinic.com/";
 
 const heroSlides: BrandHeroSlide[] = [
   {
-    image: "hair-treatments/exosome-official.jpg",
+    image: "hair-treatments/hero-scalp-analysis-v2.jpg",
     alt: "Saç dökülmesi ve saçlı deri değerlendirmesi",
     eyebrow: "Saç sağlığı",
     title: "Dökülme tipine göre planlanan yaklaşım",
@@ -24,11 +24,11 @@ const heroSlides: BrandHeroSlide[] = [
     position: "40% 47%",
   },
   {
-    image: "hair-treatments/hair-laser-official.jpg",
-    alt: "Nera Clinic saç lazeri uygulaması",
-    eyebrow: "Cihaz temelli seçenek",
-    title: "Saçlı deriye göre değerlendirilen teknoloji",
-    position: "center",
+    image: "clinic-reception-hq.jpg",
+    alt: "Nera Clinic Florya kliniği",
+    eyebrow: "Nera Clinic yaklaşımı",
+    title: "Değerlendirmeden takibe aynı klinik yaklaşım",
+    position: "center 46%",
   },
 ];
 
@@ -37,7 +37,7 @@ const services = [
     number: "01",
     title: "Saç Mezoterapisi",
     text: "Saçlı deriye uygulanan içerik ve seans planı; dökülme tipi, saçlı deri bulguları ve kişisel ihtiyaç doğrultusunda değerlendirilir.",
-    image: "mesotherapy-official.jpg",
+    image: "mesotherapy-v2.jpg",
     position: "center",
   },
   {
@@ -58,7 +58,7 @@ const services = [
     number: "04",
     title: "Saç Lazeri",
     text: "Düşük seviyeli lazer yaklaşımı, saçlı deri ve mevcut saç köklerinin durumu değerlendirilerek destekleyici bir seçenek olarak planlanabilir.",
-    image: "hair-laser-official.jpg",
+    image: "hair-laser-v2.jpg",
     position: "center",
   },
   {
@@ -169,7 +169,7 @@ export default function HairTreatmentsPage() {
 
         <section className="brand-section hair-mesotherapy" id="mezoterapi">
           <div className="hair-mesotherapy-visual">
-            <Image src={`${basePath}/images/hair-treatments/mesotherapy-official.jpg`} alt="Saç mezoterapisi uygulama alanı" fill sizes="(max-width: 960px) 100vw, 50vw" />
+            <Image src={`${basePath}/images/hair-treatments/mesotherapy-v2.jpg`} alt="Saç mezoterapisi uygulama alanı" fill sizes="(max-width: 960px) 100vw, 50vw" />
             <div className="hair-card-shade" />
             <div><small>İçerik seçimi kişiye göre yapılır</small><strong>Saç mezoterapisi uygulamaları</strong></div>
           </div>
@@ -183,6 +183,25 @@ export default function HairTreatmentsPage() {
               <li><span>03</span><div><h3>Altın Eksozom</h3><p>Eksozom temelli içerik seçeneği; ürün içeriği ve uygulama planı kişiye göre değerlendirilir.</p></div></li>
             </ol>
             <a className="button button-light" href="#contact">Uygun seçeneği konuşalım <Arrow /></a>
+          </div>
+        </section>
+
+        <section className="brand-section hair-why" id="neden-nera">
+          <div className="hair-why-visual">
+            <Image src={`${basePath}/images/clinic-reception-hq.jpg`} alt="Nera Clinic Florya kliniği" fill sizes="(max-width: 960px) 100vw, 50vw" />
+            <div className="hair-card-shade" />
+            <span>Florya · İstanbul</span>
+          </div>
+          <div className="hair-why-copy">
+            <p className="eyebrow light"><span /> Neden Nera Clinic?</p>
+            <h2>Tek bir uygulama değil,<br /><em>bütüncül bir klinik yaklaşımı.</em></h2>
+            <p>Saç dökülmesini yalnızca görünen yoğunluk üzerinden değil; saçlı deri, dökülme öyküsü, mevcut kökler ve kişisel beklentiyle birlikte ele alıyoruz.</p>
+            <ol>
+              <li><span>01</span><div><h3>Doğrudan hekim değerlendirmesi</h3><p>Uygunluk ve uygulama planı, saç sağlığı odağında hekim tarafından değerlendirilir.</p></div></li>
+              <li><span>02</span><div><h3>Kişiye göre şekillenen plan</h3><p>Ürün adına veya hazır pakete değil, saçınızın güncel ihtiyacına odaklanılır.</p></div></li>
+              <li><span>03</span><div><h3>Uygulamadan takibe süreklilik</h3><p>Plan, uygulama ve sonraki adımlar aynı klinik yaklaşım içinde açıkça paylaşılır.</p></div></li>
+            </ol>
+            <a className="button button-light" href="#contact">Nera ile tanışın <Arrow /></a>
           </div>
         </section>
 
@@ -212,7 +231,7 @@ export default function HairTreatmentsPage() {
             <a className="button button-light" href={hairTransplantUrl} target="_blank" rel="noopener">Saç ekimi sayfasını inceleyin <Arrow /></a>
           </div>
           <a className="hair-transplant-visual" href={hairTransplantUrl} target="_blank" rel="noopener" aria-label="Nera Clinic saç ekimi sayfasını aç">
-            <Image src={`${basePath}/images/branding/sac-tedavileri-official.jpg`} alt="Saç ekimi için saç çizgisi planlaması" fill sizes="(max-width: 960px) 100vw, 50vw" />
+            <Image src={`${basePath}/images/hair-treatments/hair-transplant-v2.jpg`} alt="Saç ekimi için saç çizgisi değerlendirmesi" fill sizes="(max-width: 960px) 100vw, 50vw" />
             <div className="hair-card-shade" />
             <span>hair.neraclinic.com <Arrow /></span>
           </a>
@@ -255,7 +274,7 @@ export default function HairTreatmentsPage() {
     <footer className="site-footer brand-footer lift-footer hair-footer">
       <div className="footer-inner">
         <section className="footer-conversion" aria-labelledby="hair-footer-title"><div><span className="footer-eyebrow">Nera Clinic · Saç tedavileri</span><h2 id="hair-footer-title">Saç dökülmesinde ilk adım, <em>doğru değerlendirme.</em></h2><p>Saçlı deri, dökülme tipi ve kişisel ihtiyacınıza göre şekillenen hekim yaklaşımını konuşalım.</p></div><div className="footer-buttons"><a className="footer-button footer-button-primary" href="#contact"><span>Saç değerlendirmesi planlayın</span><Arrow /></a><a className="footer-button" href={whatsapp} target="_blank" rel="noopener"><span>WhatsApp ile görüşün</span><b aria-hidden="true">→</b></a></div></section>
-        <div className="footer-main"><div className="footer-brand"><Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={230} height={50} /><p>Saç dökülmesinde hekim değerlendirmesi, kişisel planlama ve açık süreç iletişimini bir araya getiren klinik yaklaşım.</p></div><nav className="footer-links" aria-label="Saç tedavileri sayfa bağlantıları"><span>Sayfa içeriği</span><a href="#yaklasim">Yaklaşım</a><a href="#uygulamalar">Uygulamalar</a><a href="#mezoterapi">Mezoterapi seçenekleri</a><a href="#hekimler">Hekimler</a><a href="#sac-ekimi">Saç ekimi</a><a href="#surec">Süreç</a><a href="#sss">Sık Sorulanlar</a><a href="#contact">Görüşme formu</a></nav><div className="footer-contact"><span>İletişim</span><a href="tel:+905339220251"><small>Bilgi &amp; randevu</small>0533 922 02 51</a><a href="mailto:info@neraclinic.com"><small>E-posta</small>info@neraclinic.com</a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><small>Florya · İstanbul</small>Şenlikköy, Florya Cd. No:47/1, Bakırköy</a></div></div>
+        <div className="footer-main"><div className="footer-brand"><Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={230} height={50} /><p>Saç dökülmesinde hekim değerlendirmesi, kişisel planlama ve açık süreç iletişimini bir araya getiren klinik yaklaşım.</p></div><nav className="footer-links" aria-label="Saç tedavileri sayfa bağlantıları"><span>Sayfa içeriği</span><a href="#yaklasim">Yaklaşım</a><a href="#uygulamalar">Uygulamalar</a><a href="#mezoterapi">Mezoterapi seçenekleri</a><a href="#neden-nera">Neden Nera?</a><a href="#hekimler">Hekimler</a><a href="#sac-ekimi">Saç ekimi</a><a href="#surec">Süreç</a><a href="#sss">Sık Sorulanlar</a><a href="#contact">Görüşme formu</a></nav><div className="footer-contact"><span>İletişim</span><a href="tel:+905339220251"><small>Bilgi &amp; randevu</small>0533 922 02 51</a><a href="mailto:info@neraclinic.com"><small>E-posta</small>info@neraclinic.com</a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><small>Florya · İstanbul</small>Şenlikköy, Florya Cd. No:47/1, Bakırköy</a></div></div>
         <div className="footer-bottom"><p>Bu sayfadaki içerikler genel bilgilendirme amaçlıdır; tanı veya tedavi önerisi yerine geçmez. Uygunluk, içerik ve uygulama planı kişiden kişiye değişebilir. Son güncelleme: 19 Kasım 2026 · İçerik editörü: Nera Clinic.</p><nav aria-label="Yasal bağlantılar"><a href="https://neraclinic.com/kvkk/" target="_blank" rel="noopener">Gizlilik Politikası</a><span>© 2026 Nera Clinic</span></nav></div>
       </div>
     </footer>
