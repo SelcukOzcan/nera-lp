@@ -228,7 +228,7 @@ export default function HairTreatmentsPage() {
             <h2>Farklı dökülme tiplerine yönelik<br /><em>kişiselleştirilmiş tedavi planları.</em></h2>
             <p>Saç kaybının tipi, saçlı derinin durumu ve mevcut saç yoğunluğu birlikte değerlendirilir; mezoterapi, eksozom, lazer ve diğer cerrahi olmayan seçenekler kişiye özel olarak planlanır.</p>
             <p>Saç ekimi sürecini, yöntemleri ve doktor uygulamasını ayrıntılı incelemek için özel saç ekimi sayfamızı ziyaret edebilirsiniz.</p>
-            <a className="button button-light" href={hairTransplantUrl} target="_blank" rel="noopener">Saç ekimi sayfasını inceleyin <Arrow /></a>
+            <a className="button button-light" href={hairTransplantUrl} target="_blank" rel="noopener">Saç Ekimi Uygulaması <Arrow /></a>
           </div>
           <a className="hair-transplant-visual" href={hairTransplantUrl} target="_blank" rel="noopener" aria-label="Nera Clinic saç ekimi sayfasını aç">
             <Image src={`${basePath}/images/hair-treatments/hair-transplant-v2.jpg`} alt="Saç ekimi için saç çizgisi değerlendirmesi" fill sizes="(max-width: 960px) 100vw, 50vw" />
