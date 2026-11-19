@@ -225,8 +225,8 @@ export default function HairTreatmentsPage() {
         <section className="brand-section hair-transplant" id="sac-ekimi">
           <div className="hair-transplant-copy">
             <p className="eyebrow light"><span /> Saç tedavisi mi, saç ekimi mi?</p>
-            <h2>Her saç kaybı aynı yoldan<br /><em>ilerlemek zorunda değil.</em></h2>
-            <p>Saç tedavileri mevcut saç ve saçlı deriye yönelik cerrahi olmayan seçenekleri kapsar. İleri düzey saç kaybında ise saç ekimi ayrı bir değerlendirme ve planlama sürecidir.</p>
+            <h2>Farklı dökülme tiplerine yönelik<br /><em>kişiselleştirilmiş tedavi planları.</em></h2>
+            <p>Saç kaybının tipi, saçlı derinin durumu ve mevcut saç yoğunluğu birlikte değerlendirilir; mezoterapi, eksozom, lazer ve diğer cerrahi olmayan seçenekler kişiye özel olarak planlanır.</p>
             <p>Saç ekimi sürecini, yöntemleri ve doktor uygulamasını ayrıntılı incelemek için özel saç ekimi sayfamızı ziyaret edebilirsiniz.</p>
             <a className="button button-light" href={hairTransplantUrl} target="_blank" rel="noopener">Saç ekimi sayfasını inceleyin <Arrow /></a>
           </div>
