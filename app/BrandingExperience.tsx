@@ -67,13 +67,14 @@ export default function BrandingExperience({ variant = "branding" }: { variant?:
 
   const continueInForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     setStatus("submitting");
     setMessage("");
     try {
       await submitLead({ name: String(data.get("popup-name") ?? ""), phone: String(data.get("popup-phone") ?? ""), service, note: String(data.get("popup-note") ?? ""), formLocation: `${service} popup`, source: "popup" });
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error && error.message === "invalid_phone" ? "Lütfen telefon numaranızı girin." : "Talebiniz şu anda iletilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.");
