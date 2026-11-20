@@ -9,7 +9,7 @@ const isHairTreatments = variant === "hair-treatments";
 export const metadata: Metadata = isHairTreatments ? {
   metadataBase: new URL("https://pro.neraclinic.com"),
   title: "Saç Tedavileri ve Saç Eksozomu İstanbul | Nera Clinic",
-  description: "Saç mezoterapisi, saç eksozomu, PrimeHair, saç lazeri ve DPG seçeneklerinin saç dökülme tipi ve saçlı deri ihtiyacına göre hekim tarafından değerlendirildiği Nera Clinic yaklaşımı.",
+  description: "Saç eksozomu, saç mezoterapisi, DPG ve saç lazeri seçeneklerinin saç dökülme tipi ve saçlı deri ihtiyacına göre hekim tarafından değerlendirildiği Nera Clinic yaklaşımı.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "Saç Tedavileri ve Saç Eksozomu | Nera Clinic",

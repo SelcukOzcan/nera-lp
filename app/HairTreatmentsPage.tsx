@@ -28,7 +28,7 @@ const heroSlides: BrandHeroSlide[] = [
     image: "clinic-reception-hq.jpg",
     alt: "Nera Clinic Florya kliniği",
     eyebrow: "Nera Clinic yaklaşımı",
-    title: "Değerlendirmeden takibe aynı klinik yaklaşım",
+    title: "20 yılı aşkın tecrübe, modern teknoloji ve klinik güvencesi.",
     position: "center 46%",
   },
 ];
@@ -36,37 +36,30 @@ const heroSlides: BrandHeroSlide[] = [
 const services = [
   {
     number: "01",
-    title: "Saç Mezoterapisi",
-    text: "Saçlı deriye uygulanan içerik ve seans planı; dökülme tipi, saçlı deri bulguları ve kişisel ihtiyaç doğrultusunda değerlendirilir.",
-    image: "mesotherapy-v2.jpg",
-    position: "center",
-  },
-  {
-    number: "02",
     title: "Saç Eksozomu",
-    text: "Eksozom temelli içerikler, saçlı derinin güncel ihtiyacı ve kişinin medikal öyküsü göz önünde bulundurularak planlanır.",
+    text: "Eksozomlar, hücreler arası iletişimde rol oynayan, proteinler ve çeşitli biyolojik moleküller taşıyan mikroskobik yapılardır. Saç köklerini ve saçlı derinin biyolojik yapısını destekler.",
     image: "exosome-official.jpg",
     position: "48% center",
   },
   {
+    number: "02",
+    title: "Saç Mezoterapisi",
+    text: "Saç mezoterapisinde, vitaminler, aminoasitler, mineraller ve saçlı derinin ihtiyaçlarına yönelik seçilen çeşitli bileşenler mikroenjeksiyon yöntemiyle saçlı deriye uygulanır.",
+    image: "mesotherapy-v2.jpg",
+    position: "center",
+  },
+  {
     number: "03",
-    title: "PrimeHair",
-    text: "Saç mezoterapisi kapsamında değerlendirilebilen PrimeHair içeriği, herkese aynı protokol yerine kişisel plana göre ele alınır.",
-    image: "primehair-official.jpg",
-    position: "45% center",
+    title: "DPG",
+    text: "Trombosit (platelet) bakımından zengin plazmanın saçlı deriye uygulandığı bir yöntemdir. Trombositlerin içerdiği büyüme faktörleri sayesinde saç köklerinin bulunduğu dokunun biyolojik süreçlerini desteklemeyi, saç dökülmesinin azaltılmasına ve saç yoğunluğunun iyileştirilmesine katkıda bulunur.",
+    image: "dpg-official.jpg",
+    position: "center",
   },
   {
     number: "04",
     title: "Saç Lazeri",
     text: "Düşük seviyeli lazer yaklaşımı, saçlı deri ve mevcut saç köklerinin durumu değerlendirilerek destekleyici bir seçenek olarak planlanabilir.",
     image: "hair-laser-v2.jpg",
-    position: "center",
-  },
-  {
-    number: "05",
-    title: "DPG Tedavisi",
-    text: "DPG uygulaması; saç dökülmesinin nedeni, saçlı deri yapısı ve eşlik eden ihtiyaçlar doğrultusunda değerlendirilir.",
-    image: "dpg-official.jpg",
     position: "center",
   },
 ];
@@ -78,15 +71,15 @@ const faqs = [
   ],
   [
     "Saç eksozomu nedir?",
-    "Saçlı deriye yönelik eksozom temelli içeriklerin kullanıldığı uygulama başlığıdır. Ürün içeriği, uygulama sıklığı ve kişiye uygunluk hekim görüşmesinde değerlendirilir; sonuçlar kişiden kişiye değişebilir.",
+    "Eksozomlar, hücreler arası iletişimde rol oynayan, proteinler ve çeşitli biyolojik moleküller taşıyan mikroskobik yapılardır. Saç köklerini ve saçlı derinin biyolojik yapısını destekler.",
   ],
   [
     "Saç kıran için bu uygulamalardan biri doğrudan seçilebilir mi?",
     "Saç kıran olarak bilinen alopesi areata, önce tıbbi değerlendirme gerektirir. Tanı ve güncel bulgular netleşmeden kozmetik bir protokol seçilmez; uygun yaklaşım hekim tarafından belirlenir.",
   ],
   [
-    "PrimeHair, PrimeStar ve Altın Eksozom aynı uygulama mıdır?",
-    "Hayır. İsimler farklı içerik veya protokol seçeneklerini ifade edebilir. Saçlı deri için uygun içerik ve uygulama planı; ürün adına göre değil, kişisel değerlendirme sonucuna göre seçilir.",
+    "Saç eksozomu, saç mezoterapisi, DPG ve saç lazeri aynı uygulama mıdır?",
+    "Hayır. Her uygulama farklı içerik ve uygulama yaklaşımına sahiptir. Saçlı deri için uygun seçenek veya kombinasyon, kişisel değerlendirme sonucunda netleştirilir.",
   ],
   [
     "Saç tedavileri ile saç ekimi arasındaki fark nedir?",
@@ -101,7 +94,7 @@ export default function HairTreatmentsPage() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     name: "Nera Clinic",
-    url: "https://pro.neraclinic.com/v2/sac-tedavileri/",
+    url: "https://pro.neraclinic.com/sac-tedavileri/",
     telephone: "+90 533 922 02 51",
     address: {
       "@type": "PostalAddress",
@@ -122,7 +115,7 @@ export default function HairTreatmentsPage() {
         <div className="lift-hero-copy">
           <p className="eyebrow"><span /> Nera Clinic · Saç tedavileri</p>
           <h1><span>Saçın ihtiyacına göre planlanan</span><em>rejeneratif uygulamalar.</em></h1>
-          <p>Saç mezoterapisi, saç eksozomu, PrimeHair, saç lazeri ve DPG seçeneklerini; saçlı deri, dökülme tipi ve kişisel ihtiyacınız doğrultusunda hekim değerlendirmesiyle ele alıyoruz.</p>
+          <p>Saç eksozomu, saç mezoterapisi, DPG ve saç lazeri seçeneklerini; saçlı deri, dökülme tipi ve kişisel ihtiyacınız doğrultusunda hekim değerlendirmesiyle ele alıyoruz.</p>
           <div className="lift-hero-actions">
             <a className="button button-primary" href="#contact">Saç değerlendirmesi planlayın <Arrow /></a>
             <a className="text-link" href="#uygulamalar">Uygulamaları keşfedin <span aria-hidden="true">↓</span></a>
@@ -161,7 +154,7 @@ export default function HairTreatmentsPage() {
 
         <section className="brand-services brand-section hair-services" id="uygulamalar">
           <div className="brand-section-heading">
-            <div><p className="eyebrow"><span /> Saç sağlığı uygulamaları</p><h2>Beş farklı seçenek.<br /><em>Tek bir kişisel plan.</em></h2></div>
+            <div><p className="eyebrow"><span /> Saç sağlığı uygulamaları</p><h2>Dört farklı seçenek.<br /><em>Tek bir kişisel plan.</em></h2></div>
             <p>Uygulamalar paket olarak değil, saçlı derinizin ve dökülme tipinizin ihtiyaçlarına yanıt verebilecek seçenekler olarak değerlendirilir.</p>
           </div>
           <BrandServicesCarousel services={services} folder="hair-treatments" ctaLabel="Bilgi alın" />
@@ -172,16 +165,17 @@ export default function HairTreatmentsPage() {
           <div className="hair-mesotherapy-visual">
             <Image src={`${basePath}/images/hair-treatments/mesotherapy-v2.jpg`} alt="Saç mezoterapisi uygulama alanı" fill sizes="(max-width: 960px) 100vw, 50vw" />
             <div className="hair-card-shade" />
-            <div><small>İçerik seçimi kişiye göre yapılır</small><strong>Saç mezoterapisi uygulamaları</strong></div>
+            <div><small>İçerik seçimi kişiye göre yapılır</small><strong>Saç sağlığı protokolü</strong></div>
           </div>
           <div className="hair-mesotherapy-copy">
-            <p className="eyebrow light"><span /> Mezoterapi seçenekleri</p>
-            <h2>Ürün adından önce,<br /><em>saçlı derinin ihtiyacı.</em></h2>
-            <p>Mezoterapi başlığı altında farklı içerikler ve protokoller değerlendirilebilir. Seçim; popüler bir isme göre değil, saçlı deri bulgularına ve hekim değerlendirmesine göre yapılır.</p>
+            <p className="eyebrow light"><span /> Size özel protokol</p>
+            <h2>Saçınızın ihtiyacına yönelik<br /><em>size özel protokol.</em></h2>
+            <p>Saç eksozomu, saç mezoterapisi, DPG ve saç lazeri; saçlı derinin güncel ihtiyacına ve hekim değerlendirmesine göre tek başına veya kişisel bir plan içinde ele alınır.</p>
             <ol>
-              <li><span>01</span><div><h3>PrimeHair</h3><p>Saç sağlığı odağında değerlendirilen özel mezoterapi içeriği.</p></div></li>
-              <li><span>02</span><div><h3>PrimeStar</h3><p>İçerik ve saçlı deri için uygunluğu, kişisel değerlendirmede ayrıca netleştirilen seçenek.</p></div></li>
-              <li><span>03</span><div><h3>Altın Eksozom</h3><p>Eksozom temelli içerik seçeneği; ürün içeriği ve uygulama planı kişiye göre değerlendirilir.</p></div></li>
+              <li><span>01</span><div><h3>Saç Eksozomu</h3><p>Altın Eksozom, saç ve saçlı deri ihtiyaçlarına yönelik geliştirilmiştir. Hücreler arası iletişimde rol oynayan eksozomlar, büyüme faktörleri, peptitler, vitaminler ve hyaluronik asit içeren özel formülasyonu ile saç sağlığını destekler.</p></div></li>
+              <li><span>02</span><div><h3>Saç Mezoterapisi</h3><p>Hyaluronik asit, Somon DNA (PDRN), B vitamini kompleksi, ginkgo biloba ekstresi, demir, magnezyum ve büyüme faktörleri içeren formülasyonu ile saçlı derinin bakımını desteklemeyi, saçın daha güçlü, sağlıklı ve canlı bir görünüm kazanmasına katkıda bulunmayı amaçlar.</p></div></li>
+              <li><span>03</span><div><h3>DPG</h3><p>Trombosit bakımından zengin plazmanın hazırlanmasında kullanılan özel bir kit kullanılmaktadır. Trombositlerin içerdiği büyüme faktörleri sayesinde saç köklerinin bulunduğu dokunun biyolojik süreçleri desteklenir ve saç sağlığının iyileşmesi sağlanır.</p></div></li>
+              <li><span>04</span><div><h3>Saç Lazeri</h3><p>Düşük seviyeli lazer yaklaşımı, saçlı deri ve mevcut saç köklerinin durumu değerlendirilerek kişisel protokol içinde destekleyici bir seçenek olarak planlanabilir.</p></div></li>
             </ol>
             <a className="button button-light" href="#contact">Uygun seçeneği konuşalım <Arrow /></a>
           </div>
@@ -268,8 +262,8 @@ export default function HairTreatmentsPage() {
     <footer className="site-footer brand-footer lift-footer hair-footer">
       <div className="footer-inner">
         <section className="footer-conversion" aria-labelledby="hair-footer-title"><div><span className="footer-eyebrow">Nera Clinic · Saç tedavileri</span><h2 id="hair-footer-title">Saç dökülmesinde ilk adım, <em>doğru değerlendirme.</em></h2><p>Saçlı deri, dökülme tipi ve kişisel ihtiyacınıza göre şekillenen hekim yaklaşımını konuşalım.</p></div><div className="footer-buttons"><a className="footer-button footer-button-primary" href="#contact"><span>Saç değerlendirmesi planlayın</span><Arrow /></a><a className="footer-button" href={whatsapp} target="_blank" rel="noopener"><span>WhatsApp ile görüşün</span><b aria-hidden="true">→</b></a></div></section>
-        <div className="footer-main"><div className="footer-brand"><Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={230} height={50} /><p>Saç dökülmesinde hekim değerlendirmesi, kişisel planlama ve açık süreç iletişimini bir araya getiren klinik yaklaşım.</p></div><nav className="footer-links" aria-label="Saç tedavileri sayfa bağlantıları"><span>Sayfa içeriği</span><a href="#yaklasim">Yaklaşım</a><a href="#uygulamalar">Uygulamalar</a><a href="#mezoterapi">Mezoterapi seçenekleri</a><a href="#neden-nera">Neden Nera?</a><a href="#hekimler">Hekimler</a><a href="#sac-ekimi">Saç ekimi</a><a href="#surec">Süreç</a><a href="#sss">Sık Sorulanlar</a><a href="#contact">Görüşme formu</a></nav><div className="footer-contact"><span>İletişim</span><a href="tel:+905339220251"><small>Bilgi &amp; randevu</small>0533 922 02 51</a><a href="mailto:info@neraclinic.com"><small>E-posta</small>info@neraclinic.com</a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><small>Florya · İstanbul</small>Şenlikköy, Florya Cd. No:47/1, Bakırköy</a></div></div>
-        <div className="footer-bottom"><p>Bu sayfadaki içerikler genel bilgilendirme amaçlıdır; tanı veya tedavi önerisi yerine geçmez. Uygunluk, içerik ve uygulama planı kişiden kişiye değişebilir. Son güncelleme: 19 Kasım 2026 · İçerik editörü: Nera Clinic.</p><nav aria-label="Yasal bağlantılar"><a href="https://neraclinic.com/kvkk/" target="_blank" rel="noopener">Gizlilik Politikası</a><span>© 2026 Nera Clinic</span></nav></div>
+        <div className="footer-main"><div className="footer-brand"><Image src={`${basePath}/images/nera-logo.webp`} alt="Nera Clinic" width={230} height={50} /><p>Saç dökülmesinde hekim değerlendirmesi, kişisel planlama ve açık süreç iletişimini bir araya getiren klinik yaklaşım.</p></div><nav className="footer-links" aria-label="Saç tedavileri sayfa bağlantıları"><span>Sayfa içeriği</span><a href="#yaklasim">Yaklaşım</a><a href="#uygulamalar">Uygulamalar</a><a href="#mezoterapi">Size özel protokol</a><a href="#neden-nera">Neden Nera?</a><a href="#hekimler">Hekimler</a><a href="#sac-ekimi">Saç ekimi</a><a href="#surec">Süreç</a><a href="#sss">Sık Sorulanlar</a><a href="#contact">Görüşme formu</a></nav><div className="footer-contact"><span>İletişim</span><a href="tel:+905339220251"><small>Bilgi &amp; randevu</small>0533 922 02 51</a><a href="mailto:info@neraclinic.com"><small>E-posta</small>info@neraclinic.com</a><a href="https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,+34153+Bak%C4%B1rk%C3%B6y/%C4%B0stanbul" target="_blank" rel="noopener"><small>Florya · İstanbul</small>Şenlikköy, Florya Cd. No:47/1, Bakırköy</a></div></div>
+        <div className="footer-bottom"><p>Bu sayfadaki içerikler genel bilgilendirme amaçlıdır; tanı veya tedavi önerisi yerine geçmez. Uygunluk, içerik ve uygulama planı kişiden kişiye değişebilir. Son güncelleme: 20 Kasım 2026 · İçerik editörü: Nera Clinic.</p><nav aria-label="Yasal bağlantılar"><a href="https://neraclinic.com/kvkk/" target="_blank" rel="noopener">Gizlilik Politikası</a><span>© 2026 Nera Clinic</span></nav></div>
       </div>
     </footer>
 

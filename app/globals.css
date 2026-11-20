@@ -1318,10 +1318,12 @@ html:has(.analysis-dialog[open]) { overflow: hidden; }
   .lift-contact .brand-contact-actions { grid-template-columns: 1fr; }
 }
 
-/* Hair treatments landing — /v2/sac-tedavileri */
+/* Hair treatments landing — /sac-tedavileri */
 .hair-page { background: #eee3dc; }
 .hair-hero { grid-template-columns: minmax(0, 1.04fr) minmax(520px, .96fr); }
-.hair-hero .lift-hero-copy h1 { max-width: 850px; font-size: clamp(48px, 4.15vw, 68px); }
+.hair-hero .lift-hero-copy { position: relative; z-index: 2; min-width: 0; background: var(--paper); }
+.hair-hero .lift-hero-copy h1 { max-width: 760px; font-size: clamp(46px, 3.9vw, 64px); text-wrap: balance; }
+.hair-hero .lift-hero-copy h1 > * { white-space: normal; }
 .hair-hero .brand-hero-slide:first-child img { filter: saturate(.72) contrast(1.02) brightness(.92); }
 .hair-hero .brand-hero-slide:nth-child(2) img { object-position: 40% 47% !important; }
 .hair-hero .brand-hero-slide:nth-child(3) img { filter: saturate(.74) contrast(1.03) brightness(.86); }
