@@ -84,7 +84,7 @@ export default function LeadExperience() {
       event.currentTarget.reset();
     } catch (error) {
       setStatus("error");
-      setMessage(error instanceof Error && error.message === "invalid_phone" ? "Lütfen telefon numaranızı 05XX XXX XX XX biçiminde kontrol edin." : "Talebiniz şu anda iletilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.");
+      setMessage(error instanceof Error && error.message === "invalid_phone" ? "Lütfen telefon numaranızı girin." : "Talebiniz şu anda iletilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.");
       if (!(error instanceof Error && error.message === "invalid_phone")) window.dataLayer?.push({ event: "lead_fallback", lead_service: "Lazer epilasyon", lead_source: "popup" });
     }
   };
@@ -102,7 +102,7 @@ export default function LeadExperience() {
         </div>
         {status === "success" ? <div className="analysis-body analysis-success"><p id="nera-popup-lead-success" className="lead-status is-success" aria-live="polite">Talebiniz alındı. Nera Clinic ekibi sizinle iletişime geçecek.</p></div> : <form className="analysis-body" onSubmit={continueInForm}>
           <label>Adınız soyadınız<input name="popup-name" type="text" autoComplete="name" placeholder="Ad Soyad" minLength={2} required /></label>
-          <label>Telefon numaranız<input name="popup-phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="05XX XXX XX XX" minLength={10} required /></label>
+          <label>Telefon numaranız<input name="popup-phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="Telefon numaranız" required /></label>
           <label>Notunuz<textarea name="popup-note" placeholder="İlgilendiğiniz uygulamayı veya sorunuzu kısaca yazabilirsiniz." maxLength={1000} /></label>
           <label className="analysis-consent"><input type="checkbox" required /><span>İletişim amacıyla aranmayı kabul ediyorum.</span></label>
           <button className="analysis-submit" type="submit" disabled={status === "submitting"}><span>{status === "submitting" ? "İletiliyor…" : "Ücretsiz analizimi planla"}</span><span aria-hidden="true">↗</span></button>

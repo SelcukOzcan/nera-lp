@@ -47,7 +47,7 @@ export default function LeadForm({
       form.reset();
     } catch (error) {
       setStatus("error");
-      setMessage(error instanceof Error && error.message === "invalid_phone" ? "Lütfen telefon numaranızı 05XX XXX XX XX biçiminde kontrol edin." : "Talebiniz şu anda iletilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.");
+      setMessage(error instanceof Error && error.message === "invalid_phone" ? "Lütfen telefon numaranızı girin." : "Talebiniz şu anda iletilemedi. Lütfen WhatsApp veya telefon üzerinden bize ulaşın.");
       if (!(error instanceof Error && error.message === "invalid_phone")) window.dataLayer?.push({ event: "lead_fallback", lead_service: service, lead_source: "main_form" });
     }
   };
@@ -57,7 +57,7 @@ export default function LeadForm({
       <div className="form-heading"><span>{eyebrow}</span><strong>{title}</strong></div>
       <div className="field-row">
         <label>Adınız<input type="text" name="name" autoComplete="name" placeholder="Adınız" minLength={2} required /></label>
-        <label>Telefon<input type="tel" name="phone" autoComplete="tel" inputMode="tel" placeholder="05__ ___ __ __" minLength={10} required /></label>
+        <label>Telefon<input type="tel" name="phone" autoComplete="tel" inputMode="tel" placeholder="Telefon numaranız" required /></label>
       </div>
       <label>{messageLabel}<textarea name="note" placeholder="İlgilendiğiniz uygulamayı veya sorunuzu kısaca yazabilirsiniz." maxLength={1000} /></label>
       <label className="consent"><input type="checkbox" required /> <span><a href="https://neraclinic.com/kvkk/" target="_blank" rel="noopener">KVKK aydınlatma metnini</a> okudum; iletişim amacıyla aranmayı kabul ediyorum.</span></label>
