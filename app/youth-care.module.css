@@ -58,38 +58,74 @@
 
 .shell { width: min(100% - 2rem, 1370px); margin: 1rem auto; display: grid; gap: 1rem; }
 .shell > section { border-radius: 1.35rem; }
-.options, .faq, .contact { padding: clamp(1.4rem, 4vw, 4rem); }
-.options, .faq { background: var(--youth-cream); }
+.options, .guide, .plan, .faq, .contact { padding: clamp(1.4rem, 4vw, 4rem); }
+.options, .guide, .faq { background: var(--youth-cream); }
 .shell h2 { font-size: clamp(2rem, 3.5vw, 3.65rem); line-height: 1.08; }
 .sectionHeading {
   display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: end;
   gap: 1rem 3rem; margin-bottom: 1.85rem;
 }
 .sectionHeading > p { margin: 0; max-width: 38rem; color: var(--muted); }
-.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .7rem; align-items: start; }
+.guide {
+  display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  align-items: center; gap: 1.45rem clamp(1.75rem, 5vw, 5rem);
+}
+.guide dl { display: grid; gap: .75rem; margin: 0; }
+.guide dl div { padding: 1rem 1.15rem; border-radius: .8rem; background: #f4e7dc; }
+.guide dt { font-weight: 750; }
+.guide dd { margin: .27rem 0 0; color: #695048; }
+
+.optionNav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .55rem; margin-bottom: 1.15rem; }
+.optionNav a {
+  display: grid; min-height: 44px; place-items: center; padding: .5rem; border: 1px solid #dcc2b5;
+  border-radius: .7rem; background: #f6e9df; color: var(--wine); font-size: .875rem; font-weight: 700; text-align: center;
+}
+.optionNav a:hover { color: #fff; background: var(--wine); border-color: var(--wine); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
 .card {
   display: grid; grid-template-rows: auto auto 1fr auto; align-content: start;
-  min-height: 15.5rem; padding: clamp(.9rem, 1.55vw, 1.5rem); border-radius: 1rem;
-  border: 1px solid #dfc7bc; background: #f8eee7; transition: border-color .18s ease;
+  gap: .4rem; padding: clamp(1rem, 2vw, 1.75rem); border-radius: 1rem; scroll-margin-top: 92px;
+  border: 1px solid #dfc7bc; background: #f8eee7;
 }
-.card:hover, .card:focus-within { border-color: #b87968; }
-.card:nth-child(2n) { background: #f3e3d9; }
-.card > p { margin: 0 0 .75rem; color: #695048; }
-.card .category { color: #884439; font-size: .78rem; font-weight: 700; }
-.card h3 { margin: 0 0 .5rem; font-family: var(--serif); font-size: clamp(1.5rem, 2.25vw, 2.1rem); line-height: 1.1; }
-.card details { border-top: 1px solid #dac0b4; }
-.card details p, .questions details p { margin: 0 0 .6rem; color: #695048; }
-.card summary, .questions summary {
+.card:target { border-color: var(--wine); box-shadow: inset 0 0 0 1px var(--wine); }
+.card > p { margin: 0; color: #695048; }
+.card .category { color: #884439; font-size: .82rem; font-weight: 750; }
+.card h3 { margin: 0; font-family: var(--serif); font-size: clamp(1.7rem, 2.55vw, 2.45rem); line-height: 1.1; }
+.card dl { display: grid; gap: .65rem; margin: .65rem 0 0; }
+.card dl div { border-top: 1px solid #dac0b4; padding-top: .65rem; }
+.card dt { color: var(--wine); font-size: .875rem; font-weight: 750; }
+.card dd { margin: .16rem 0 0; color: #695048; }
+.cardFoot {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1.5rem;
+  margin-top: 1.2rem; padding-top: 1.05rem; border-top: 1px solid #dac0b4;
+}
+.cardFoot p { margin: 0; color: #695048; }
+
+.plan { background: #efdcd0; }
+.planSteps {
+  counter-reset: plan-step; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem;
+  margin: 0; padding: 0; list-style: none;
+}
+.planSteps li { padding: clamp(1rem, 2vw, 1.55rem); border-radius: .95rem; background: var(--youth-cream); }
+.planSteps li::before {
+  counter-increment: plan-step; content: counter(plan-step);
+  display: grid; place-items: center; width: 2rem; height: 2rem; margin-bottom: .65rem;
+  border-radius: 50%; background: #ecd9ce; color: var(--wine); font-size: .9rem; font-weight: 750;
+}
+.planSteps h3 { margin: 0 0 .3rem; color: var(--youth-ink); font-size: 1rem; font-weight: 750; }
+.planSteps p { margin: 0; color: #695048; }
+
+.questions details p { margin: 0 0 .6rem; color: #695048; }
+.questions summary {
   list-style: none; display: flex; align-items: center; justify-content: space-between; gap: .75rem; min-height: 48px;
   color: var(--wine); font-weight: 700;
 }
-.card summary { font-size: .875rem; }
-.card summary::-webkit-details-marker, .questions summary::-webkit-details-marker { display: none; }
-.card summary span, .questions summary span {
+.questions summary::-webkit-details-marker { display: none; }
+.questions summary span {
   display: grid; flex: 0 0 1.85rem; height: 1.85rem; place-items: center; border-radius: 50%;
   background: #eddace; color: var(--wine); line-height: 1; font-size: 1.15rem;
 }
-.card details[open] summary span, .questions details[open] summary span { transform: rotate(45deg); }
+.questions details[open] summary span { transform: rotate(45deg); }
 
 .approach {
   display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: stretch;
@@ -153,10 +189,6 @@
 .page :global(.floating-whatsapp) { background: #245b49; }
 .page :global(.floating-actions span) { font-size: .75rem; }
 
-@media (max-width: 1090px) {
-  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .card { min-height: 12.5rem; }
-}
 @media (max-width: 760px) {
   .page :global(.site-topbar) { gap: .6rem; padding-inline: .85rem; font-size: .735rem; }
   .page :global(.site-topbar a:first-child) { display: block; min-width: 0; }
@@ -169,7 +201,8 @@
   .intro { margin-top: .7rem; }
   .heroPhoto { aspect-ratio: 1.8; border-top-right-radius: 2.75rem; }
   .heroActions { gap: .5rem; }
-  .approach, .faq, .contact { grid-template-columns: minmax(0, 1fr); }
+  .guide, .cards, .approach, .faq, .contact, .planSteps { grid-template-columns: minmax(0, 1fr); }
+  .optionNav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .doctor { min-height: 0; aspect-ratio: 1.4; }
   .approachCopy dl > div { grid-template-columns: 1fr; gap: .05rem; }
   .sectionHeading { grid-template-columns: 1fr; margin-bottom: 1rem; }
@@ -178,11 +211,10 @@
   .page :global(.floating-actions a), .page :global(.floating-actions button) { width: 44px; height: 44px; }
 }
 @media (max-width: 475px) {
-  .cards { grid-template-columns: 1fr; }
-  .card { min-height: auto; }
+  .heroActions a { flex: 1 1 auto; }
   .contact :global(.field-row) { grid-template-columns: 1fr; gap: .7rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .primary, .outline, .card, .contactLinks a { transition: none; }
+  .primary, .outline, .contactLinks a { transition: none; }
   .page :global(.floating-actions), .page :global(.analysis-dialog[open]) { animation: none; }
 }

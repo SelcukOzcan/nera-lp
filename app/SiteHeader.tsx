@@ -15,7 +15,7 @@ const menus = {
   hairTreatments: [
     ["Yaklaşım", "#yaklasim"], ["Uygulamalar", "#uygulamalar"], ["Neden Nera?", "#neden-nera"], ["Hekimler", "#hekimler"], ["SSS", "#sss"],
   ],
-  youthCare: [["Uygulamalar", "#uygulamalar"], ["Planlama", "#yaklasim"], ["SSS", "#sss"]],
+  youthCare: [["Uygulamalar", "#uygulamalar"], ["Hekim", "#yaklasim"], ["Birlikte planlama", "#kombinasyon"], ["SSS", "#sss"]],
 };
 
 const ctaLabels = {

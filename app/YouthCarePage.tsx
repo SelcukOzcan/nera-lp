@@ -12,36 +12,45 @@ const map = "https://maps.google.com/?q=%C5%9Eenlikk%C3%B6y,+Florya+Cd.+No:47/1,
 
 const options = [
   {
+    id: "somon-dna",
     name: "Somon DNA",
     category: "MesoNutrilift",
-    summary: "Somon DNA ve hyaluronik asidi bir araya getiren bir formül.",
-    detail: "Formül vitamin, mineral ve peptit gibi ek bileşenler de içerir.",
+    summary: "Somon DNA adıyla anılan MesoNutrilift, birden fazla bileşeni aynı formülde bir araya getirir. Görüşmede nem ve cilt dokusuna ilişkin beklentileriniz üzerinden değerlendirilebilir.",
+    ingredients: "Somon DNA, hyaluronik asit, vitaminler, mineraller ve peptitler.",
+    question: "Nem ve cilt dokusuna ilişkin beklentilerim bu formülle nasıl değerlendirilir?",
   },
   {
+    id: "primestar",
     name: "PrimeStar",
-    category: "Çok bileşenli formüller",
-    summary: "Hyaluronik asit, aminoasit ve glutatyon içeren bir ürün ailesi.",
-    detail: "Formüller birbirinden farklıdır. Örneğin PrimeStar PN, polinükleotid de içerir.",
+    category: "Farklı içerik seçenekleri",
+    summary: "PrimeStar bir ürün ailesidir. Varyantlar farklı içeriklere sahip olduğu için görüşmede hangi formülün ele alındığını ve seçim nedenini sormak önemlidir.",
+    ingredients: "Temel formülde hyaluronik asit, aminoasit ve glutatyon. PN varyantında ayrıca polinükleotid.",
+    question: "Hangi PrimeStar formülünden söz ediyoruz ve içerik farkı benim için ne ifade ediyor?",
   },
   {
+    id: "altin-eksozom",
     name: "Altın Eksozom",
     category: "Eksozom içeren formüller",
-    summary: "Eksozom içeren ve içeriği kullanılan formüle göre değişen seçenekler.",
-    detail: "Eksozomlar, hücreler arası iletişimde rol alan küçük keseciklerdir. Bu kategorideki formüllerin içeriği ve uygulama yolu ayrı ayrı değerlendirilir.",
+    summary: "Eksozomlar hücreler arası iletişimde rol alan küçük keseciklerdir. Altın Eksozom adı altında farklı formüller bulunduğundan içerik ve uygulama yolu ürün bazında ele alınır.",
+    ingredients: "Eksozomlar ve formüle göre değişen ek bileşenler.",
+    question: "Cilt için değerlendirilen formülün içeriği ve uygulama yolu nedir?",
   },
   {
+    id: "pllacell",
     name: "PLLACell",
-    category: "PLLA ve polinükleotid",
-    summary: "Poli-L-laktik asit (PLLA) ve polinükleotidi (PN) birlikte içeren bir formül.",
-    detail: "Formül ayrıca sodyum hyalüronat, glutatyon ve C vitamini içerir.",
+    category: "PLLA ve PN içeren formül",
+    summary: "PLLACell, poli-L-laktik asit (PLLA) ile polinükleotidi (PN) bir araya getirir. Görüşmede, kullanılan bileşenlerin ne amaçla seçildiği ve takip süreci açıklanır.",
+    ingredients: "PLLA, PN, sodyum hyalüronat, glutatyon ve C vitamini.",
+    question: "PLLA içeren bir uygulamada riskler ve takip planı nedir?",
   },
 ];
 
 const questions = [
-  ["Gençlik aşısı ne demek?", "Cilt görünümüne yönelik farklı medikal estetik uygulamalar için kullanılan genel bir ifadedir. Görüşmede hangi içerikten ve hangi uygulama biçiminden söz edildiğini sorabilirsiniz."],
-  ["Mezoterapi ile gençlik aşısı arasındaki fark nedir?", "Mezoterapi bir uygulama yöntemini, gençlik aşısı ise günlük kullanımda bir uygulama grubunu ifade eder. İçerik, uygulama yolu ve bölge kullanılan seçeneğe göre değişir."],
-  ["Bu seçenekler birlikte uygulanabilir mi?", "Hekim seçenekleri aynı plan içinde değerlendirebilir. Birden fazla uygulamanın gerekip gerekmediği, uygunluk ve zamanlama kişisel değerlendirmeye göre belirlenir."],
-  ["İlk görüşmede neleri konuşabilirim?", "Cildinizde sizi düşündüren değişiklikleri, önceki işlemleri ve beklentilerinizi paylaşabilirsiniz. Hekiminizle seçeneklerin sınırlılıklarını, risklerini ve takip gereksinimini konuşabilirsiniz."],
+  ["Kaç seans planlanır?", "Seans gerekip gerekmediği, sayısı ve aralığı kullanılan uygulamaya, bölgeye ve hekim değerlendirmesine göre değişir. Görüşmede takip için ne zaman yeniden değerlendirme yapılacağını da sorabilirsiniz."],
+  ["Yüz, boyun ve dekolte aynı şekilde mi değerlendirilir?", "Her bölgenin cilt yapısı ve önceki uygulama öyküsü ayrı değerlendirilir. Ürünün hangi bölgelerde kullanımının uygun olduğu ve olası riskler görüşmede açıklanır."],
+  ["İşlem sonrasında neler görülebilir?", "Enjeksiyon içeren işlemlerin ardından kızarıklık, hassasiyet, şişlik veya morarma görülebilir. Beklenen etkilerin süresi ve hangi belirtilerde kliniğe ulaşmanız gerektiği uygulamaya göre açıklanır."],
+  ["İlk görüşme için neyi hazırlamalıyım?", "Kullandığınız ilaçları, bilinen alerjilerinizi ve varsa yakın zamanda yaptırdığınız uygulamaları hekiminizle paylaşmaya hazırlanın. Aklınızdaki soruları görüşmeye getirebilirsiniz."],
+  ["Görüşme talebi gönderince ne olur?", "Klinik ekibi verdiğiniz telefon numarasından sizi arayarak iletişim talebiniz hakkında bilgi verir."],
 ];
 
 export default function YouthCarePage() {
@@ -54,7 +63,7 @@ export default function YouthCarePage() {
           <div className={styles.heroCopy}>
             <p className={styles.kicker}>Nera Clinic · Florya</p>
             <h1 id="youth-title">Gençlik aşısı<br /><em>ve mezoterapi</em></h1>
-            <p className={styles.intro}>Cilt uygulamalarının içeriğini, aralarındaki farkları ve hekim değerlendirmesinde nasıl ele alındıklarını keşfedin.</p>
+            <p className={styles.intro}>Cilt nemi, doku ve ince çizgilerle ilgili merak ettikleriniz için dört farklı yaklaşımı inceleyin. Hangi içeriklerin nasıl ayrıştığını ve hekim görüşmesinde nelerin değerlendirilip planlandığını öğrenin.</p>
           </div>
           <figure className={styles.heroPhoto}>
             <Image
@@ -67,27 +76,45 @@ export default function YouthCarePage() {
             <figcaption>Temsili görsel</figcaption>
           </figure>
           <div className={styles.heroActions}>
-            <a className={styles.primary} href="#uygulamalar">Uygulamaları inceleyin</a>
-            <a className={styles.outline} href="#contact">İletişim bilgileri</a>
+            <a className={styles.primary} href="#contact">Geri arama talebi</a>
+            <a className={styles.outline} href="#uygulamalar">Uygulamaları inceleyin</a>
           </div>
         </section>
 
         <div className={styles.shell}>
+          <section className={styles.guide} id="rehber" aria-labelledby="youth-guide">
+            <div>
+              <p className={styles.kicker}>Kısa rehber</p>
+              <h2 id="youth-guide">Gençlik aşısı ve mezoterapi <em>arasındaki fark ne?</em></h2>
+            </div>
+            <dl>
+              <div><dt>Gençlik aşısı</dt><dd>Cilt görünümüne yönelik farklı medikal estetik uygulamalar için kullanılan bir ifadedir. Bu ad altında içerikleri ve uygulama biçimleri değişen seçenekler bulunur.</dd></div>
+              <div><dt>Mezoterapi</dt><dd>Seçilen içeriğin küçük enjeksiyonlarla uygulanmasını ifade eden bir yöntemdir. Kullanılan içerik ve uygulama bölgesi ayrıca değerlendirilir.</dd></div>
+            </dl>
+          </section>
+
           <section id="uygulamalar" className={styles.options} aria-labelledby="youth-options">
             <header className={styles.sectionHeading}>
-              <div><p className={styles.kicker}>Uygulama rehberi</p><h2 id="youth-options">Dört seçenek, <em>farklı içerikler.</em></h2></div>
-              <p>Gençlik aşısı günlük dilde birden fazla uygulamayı kapsar. Bu seçenekleri ayırt etmek için içeriklerine bakabilirsiniz.</p>
+              <div><p className={styles.kicker}>Uygulama seçenekleri</p><h2 id="youth-options">Hangi uygulama <em>neyi içeriyor?</em></h2></div>
+              <p>Dört seçeneğin temel içeriklerini karşılaştırın. Her kartta hekim görüşmesinde sorabileceğiniz bir soru da bulabilirsiniz.</p>
             </header>
+            <nav className={styles.optionNav} aria-label="Uygulamaya git">
+              {options.map((option) => <a href={`#${option.id}`} key={option.id}>{option.name}</a>)}
+            </nav>
             <div className={styles.cards}>
-              {options.map((option) => <article className={styles.card} key={option.name}>
+              {options.map((option) => <article className={styles.card} id={option.id} key={option.id} tabIndex={-1}>
                 <p className={styles.category}>{option.category}</p>
                 <h3>{option.name}</h3>
                 <p>{option.summary}</p>
-                <details>
-                  <summary>İçerik detayı <span aria-hidden="true">+</span></summary>
-                  <p>{option.detail}</p>
-                </details>
+                <dl>
+                  <div><dt>Formülde neler var?</dt><dd>{option.ingredients}</dd></div>
+                  <div><dt>Görüşmede sorabilirsiniz</dt><dd>{option.question}</dd></div>
+                </dl>
               </article>)}
+            </div>
+            <div className={styles.cardFoot}>
+              <p>İçerikleri inceledikten sonra birden fazla seçeneğin nasıl planlandığına bakabilirsiniz.</p>
+              <a className={styles.outline} href="#kombinasyon">Birlikte planlama</a>
             </div>
           </section>
 
@@ -99,12 +126,28 @@ export default function YouthCarePage() {
             <div className={styles.approachCopy}>
               <p className={styles.kicker}>Hekim değerlendirmesi</p>
               <h2 id="youth-approach">Cildinize göre <em>şekillenen plan.</em></h2>
-              <p>Cilt yapınız, beklentileriniz ve önceki uygulamalarınız görüşmede birlikte ele alınır. Hekim, tek bir seçeneğin yeterli olup olmadığını veya farklı yaklaşımların aynı plan içinde değerlendirilip değerlendirilemeyeceğini açıklar.</p>
+              <p>İlk görüşmede cildinizde sizi düşündüren konular, önceki işlemler ve sağlık öykünüz birlikte ele alınır. Hekim, hangi seçeneklerin değerlendirilebileceğini ve her birinden ne beklenebileceğini açıklar.</p>
               <dl>
                 <div><dt>Görüşme</dt><dd>Cildiniz, öncelikleriniz ve sağlık öykünüz konuşulur.</dd></div>
                 <div><dt>Planlama</dt><dd>Uygun seçenekler, olası riskler ve zamanlama açıklanır.</dd></div>
                 <div><dt>Takip</dt><dd>Uygulama yapılırsa sonraki adımlar ve kontrol planı paylaşılır.</dd></div>
               </dl>
+            </div>
+          </section>
+
+          <section id="kombinasyon" className={styles.plan} aria-labelledby="youth-plan">
+            <header className={styles.sectionHeading}>
+              <div><p className={styles.kicker}>Kişiye özel planlama</p><h2 id="youth-plan">Uygulamalar birlikte <em>nasıl değerlendirilir?</em></h2></div>
+              <p>Tek görüşmede birden fazla seçenek konuşulabilir. Hangi uygulamanın uygun olduğu ve bir kombinasyon gerekip gerekmediği, bölgeye ve cildinizin önceliklerine göre değerlendirilir.</p>
+            </header>
+            <ol className={styles.planSteps}>
+              <li><h3>Önceliği netleştirme</h3><p>Örneğin, yanaklarda kuruluk ve boyunda ince çizgiler aynı görüşmede konuşulabilir. Her bölge kendi bulgularıyla ele alınır.</p></li>
+              <li><h3>Seçenekleri tartma</h3><p>Hekim, görüşmede ilgili içerikleri, alternatifleri ve olası riskleri açıklar. Daha önce yaptırdığınız işlemler de değerlendirmeye girer.</p></li>
+              <li><h3>Zamanlamayı belirleme</h3><p>Bir uygulama planlanırsa bölge, olası seans aralığı ve takip adımları netleşir. Birden fazla işlem düşünülürse sırası ayrıca değerlendirilir.</p></li>
+            </ol>
+            <div className={styles.cardFoot}>
+              <p>Görüşme ve iletişim hakkında bilgi almak için klinik ekibine ulaşabilirsiniz.</p>
+              <a className={styles.primary} href="#contact">Geri arama talebi</a>
             </div>
           </section>
 
@@ -121,7 +164,8 @@ export default function YouthCarePage() {
           <section id="contact" className={styles.contact} aria-labelledby="youth-contact">
             <div className={styles.contactCopy}>
               <p className={styles.kicker}>Florya · Bakırköy</p>
-              <h2 id="youth-contact">Nera Clinic<br />ile iletişim</h2>
+              <h2 id="youth-contact">Kliniğe ulaşın</h2>
+              <p>Uygulamalar veya görüşme hakkında bilgi almak için telefon numaranızı bırakabilirsiniz. Klinik ekibimiz sizi arayacaktır.</p>
               <p>Şenlikköy Mahallesi, Florya Caddesi No:47/1<br />Bakırköy, İstanbul</p>
               <div className={styles.contactLinks}>
                 <a href={phone}>0533 922 02 51</a>
@@ -129,7 +173,7 @@ export default function YouthCarePage() {
                 <a href={map} target="_blank" rel="noopener noreferrer">Yol tarifi</a>
               </div>
             </div>
-            <LeadForm eyebrow="İletişim formu" service={service} submitLabel="Talebi gönder" messageLabel="Notunuz (isteğe bağlı)" noteId="youth-form-note" />
+            <LeadForm eyebrow="İletişim formu" title="Geri arama talebi" service={service} submitLabel="Geri arama talebi gönder" messageLabel="Notunuz (isteğe bağlı)" noteId="youth-form-note" />
           </section>
         </div>
       </main>
@@ -143,7 +187,7 @@ export default function YouthCarePage() {
             </div>
             <nav className="footer-links" aria-label="Sayfa bağlantıları">
               <span>Bu sayfada</span>
-              <a href="#uygulamalar">Uygulamalar</a><a href="#yaklasim">Planlama</a><a href="#sss">Sık sorulan sorular</a><a href="#contact">İletişim</a>
+              <a href="#uygulamalar">Uygulamalar</a><a href="#yaklasim">Hekim değerlendirmesi</a><a href="#kombinasyon">Birlikte planlama</a><a href="#sss">Sık sorulan sorular</a><a href="#contact">İletişim</a>
             </nav>
             <div className="footer-contact">
               <span>Nera Clinic</span>
