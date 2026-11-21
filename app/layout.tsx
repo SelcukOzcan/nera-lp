@@ -6,7 +6,14 @@ const isBranding = variant === "branding";
 const isFaceLift = variant === "face-lift";
 const isHairTreatments = variant === "hair-treatments";
 
-export const metadata: Metadata = isHairTreatments ? {
+export const metadata: Metadata = variant === "youth-care" ? {
+  metadataBase: new URL("https://pro.neraclinic.com"),
+  title: "Gençlik Aşısı ve Mezoterapi Uygulamaları | Nera Clinic",
+  description: "Gençlik aşısı ve mezoterapi uygulamaları, içeriklerin farkları ve kişiye göre planlamada hekim değerlendirmesi. Nera Clinic, Florya / Bakırköy.",
+  alternates: { canonical: "/genclik-asisi/" },
+  robots: { index: false, follow: false },
+  openGraph: { type: "website", locale: "tr_TR", url: "/genclik-asisi/" },
+} : isHairTreatments ? {
   metadataBase: new URL("https://pro.neraclinic.com"),
   title: "Saç Tedavileri ve Saç Eksozomu İstanbul | Nera Clinic",
   description: "Saç eksozomu, saç mezoterapisi, DPG ve saç lazeri seçeneklerinin saç dökülme tipi ve saçlı deri ihtiyacına göre hekim tarafından değerlendirildiği Nera Clinic yaklaşımı.",

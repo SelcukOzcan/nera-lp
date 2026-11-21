@@ -15,6 +15,7 @@ const menus = {
   hairTreatments: [
     ["Yaklaşım", "#yaklasim"], ["Uygulamalar", "#uygulamalar"], ["Neden Nera?", "#neden-nera"], ["Hekimler", "#hekimler"], ["SSS", "#sss"],
   ],
+  youthCare: [["Uygulamalar", "#uygulamalar"], ["Planlama", "#yaklasim"], ["SSS", "#sss"]],
 };
 
 const ctaLabels = {
@@ -22,6 +23,7 @@ const ctaLabels = {
   branding: "Görüşme planlayın",
   faceLift: "Bilgi alın",
   hairTreatments: "Saç değerlendirmesi",
+  youthCare: "İletişim",
 };
 
 export default function SiteHeader({ variant }: { variant: keyof typeof menus }) {

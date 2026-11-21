@@ -4,6 +4,7 @@ import LeadExperience from "./LeadExperience";
 import BrandingPage from "./BrandingPage";
 import FaceLiftPage from "./FaceLiftPage";
 import HairTreatmentsPage from "./HairTreatmentsPage";
+import YouthCarePage from "./YouthCarePage";
 import SiteHeader from "./SiteHeader";
 import LeadForm from "./LeadForm";
 
@@ -199,5 +200,6 @@ function LaserPage() {
 
 export default function Home() {
   const variant = process.env.NEXT_PUBLIC_SITE_VARIANT;
+  if (variant === "youth-care") return <YouthCarePage />;
   return variant === "branding" ? <BrandingPage /> : variant === "face-lift" ? <FaceLiftPage /> : variant === "hair-treatments" ? <HairTreatmentsPage /> : <LaserPage />;
 }
