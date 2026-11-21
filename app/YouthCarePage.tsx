@@ -22,9 +22,9 @@ const options = [
   {
     id: "primestar",
     name: "PrimeStar",
-    category: "Farklı içerik seçenekleri",
-    summary: "PrimeStar bir ürün ailesidir. Varyantlar farklı içeriklere sahip olduğu için görüşmede hangi formülün ele alındığını ve seçim nedenini sormak önemlidir.",
-    ingredients: "Temel formülde hyaluronik asit, aminoasit ve glutatyon. PN varyantında ayrıca polinükleotid.",
+    category: "Somon DNA (PN) içeren formül",
+    summary: "PrimeStar ailesinde farklı formüller bulunur. PrimeStar PN, somon DNA kaynaklı polinükleotidler içeren seçeneklerden biridir.",
+    ingredients: "PrimeStar PN formülünde somon DNA kaynaklı polinükleotidler (PN), hyaluronik asit, glutatyon ve aminoasit kompleksi bulunur.",
     question: "Hangi PrimeStar formülünden söz ediyoruz ve içerik farkı benim için ne ifade ediyor?",
   },
   {
