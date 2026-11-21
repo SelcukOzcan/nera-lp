@@ -167,7 +167,12 @@
 .contact :global(.lead-form > p) { color: #6e5750; font-size: .82rem; }
 .contact :global(.lead-form .is-success) { color: #226b3e; }
 .contact :global(.lead-form .is-error) { color: #98342d; }
-.footer :global(.footer-main) { min-height: auto; padding: 2.25rem 0; }
+.footer :global(.footer-conversion) { padding-block: clamp(2rem, 4vw, 3.75rem); }
+.footer :global(.footer-conversion h2) { max-width: none; font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.07; }
+.footer :global(.footer-conversion p), .footer :global(.footer-button) { font-size: .9rem; }
+.footer :global(.footer-button) { justify-content: center; }
+.footer :global(.footer-main) { min-height: auto; padding: clamp(2.25rem, 4vw, 3.5rem) 0; }
+.footer :global(.footer-contact small) { font-size: .75rem; letter-spacing: .06em; }
 .footer :global(.footer-links a), .footer :global(.footer-bottom) { font-size: .83rem; }
 .footer :global(.footer-bottom a) { text-decoration: underline; text-underline-offset: .2em; }
 
